@@ -9,7 +9,7 @@
       - Section: Notes:
       - Committing to the repo, etc.
    1. How many students have played: Oh My Git!
-      * M/W @ 9:00 am:
+      * M/W @ 9:00 am: 0
       * M/W @ 2:00 pm:
       * T/R @ 9:00 am:
       * T/R @ 2:00 pm:
@@ -25,6 +25,8 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am
+     - how do we store our notes more effectively... TBD
+
 
    * M/W @ 2:00 pm
 
@@ -39,7 +41,7 @@
 
 ---
 # Today's Material
-  1. Models of Models of Computation and Communication
+  1. Models of Computation and Communication
      - See slides
      - where are the slides?
 
