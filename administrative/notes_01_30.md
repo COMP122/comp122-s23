@@ -36,9 +36,12 @@
      1. More info on the 01- assignment?
      1. How do I know I successfully submitted my deliverable?
 
-
    * T/R @ 2:00 pm
-     1.
+     1. What is the -m option to `git commit`?
+     1. How do we get our grades for each assignment?
+     1. Difference from cmd, powershell, git-bash?     
+     1. How do I know I successfully submitted my deliverable?
+
 
 ## Review from Last-time:
 
@@ -46,13 +49,13 @@
      ```bash
      cd
      chsh
-     cp, mv 
+     cp, mv    # cp A /tmp/B
      echo
      git
      git add
      git clone
      git commit
-     git config --global 
+     git config --global --list
      git config --list
      git log
      git push
