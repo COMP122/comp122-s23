@@ -11,7 +11,7 @@
    1. How many students have played: Oh My Git!
       * M/W @ 9:00 am: 0
       * M/W @ 2:00 pm: 2 - 1/2s
-      * T/R @ 9:00 am:
+      * T/R @ 9:00 am: 0
       * T/R @ 2:00 pm:
       
       Where are we suppose to find the time?
@@ -28,9 +28,10 @@
      - how do we store our notes more effectively... TBD
 
    * M/W @ 2:00 pm
-     - 
 
    * T/R @ 9:00 am
+     - how do I pull up the notes?
+     - how to access the feedback system
 
    * T/R @ 2:00 pm
 
