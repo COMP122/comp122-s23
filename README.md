@@ -128,7 +128,7 @@ This README.md file provides you with an overview of this structure, key informa
         ```
         cd
         touch .profile
-        cp .profile .profile.orig
+        mv .profile .profile.orig
         echo 'source ~/classes/comp122/.profile.comp122'  >> .profile
         source .profile
         ```
