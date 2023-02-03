@@ -19,6 +19,7 @@ git pull
 echo ~/.bash*
 cat ~/.profile
 which subl
+java --version
 which mars
 cd ~/classes/comp122/deliverables/
 git config --get user.name
@@ -30,3 +31,10 @@ git -C 02-* log -n 1
 git -C 03-* config --get remote.origin.url
 git -C 03-* log -n 1
 ```
+
+
+
+
+
+
+
