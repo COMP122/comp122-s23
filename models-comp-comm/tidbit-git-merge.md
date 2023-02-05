@@ -187,13 +187,17 @@
      - git pull
      - git checkout my_notes
      - git merge -m 'merging updates from Prof' main
-  1. Update your Notes Routine:
+  1. Update Your Notes Routine:
      - git checkout my_notes
      - subl notes_02_06.md
        * edit just the "Notes" section to avoid merge conflicts
      - git add notes_02_06.md
      - git commit -m 'my notes from today'
 
+  1. Condensed form will on the "my_notes" branch
+     - git fetch
+     - git merge origin main
+     
 ---
 ## Notes
 <!-- This section is for students to place their notes -->
