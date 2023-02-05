@@ -5,7 +5,7 @@
 
 
 ## Today's Agenda:
-   1. Tidbit: Git Merging and Mainting your Notes
+   1. Tidbit: Git Merging and Maintaining your Notes
    1. Instruction Set Architecture 
 
 
@@ -24,7 +24,7 @@
 
 ---
 # Today's Material
-  1. Instruction Set Archtiecture
+  1. Instruction Set Architecture
      - See slides
 
 ---
