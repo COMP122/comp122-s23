@@ -12,7 +12,7 @@
       * M/W @ 9:00 am: 0
       * M/W @ 2:00 pm: 2 - 1/2s
       * T/R @ 9:00 am: 0
-      * T/R @ 2:00 pm:
+      * T/R @ 2:00 pm: 0
       
       Where are we suppose to find the time?
         - “Give me six hours to chop down a tree and I will spend the first four sharpening the axe.”  #quote Abraham Lincoln
@@ -34,6 +34,8 @@
      - how to access the feedback system
 
    * T/R @ 2:00 pm
+     - what is a configure files, and `git config`?
+     - can I selectively push something to a remote?
 
 
 ## Review from Last-time:
