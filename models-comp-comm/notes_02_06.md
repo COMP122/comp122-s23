@@ -2,10 +2,11 @@
 
 ## Announcements:
    1. scheduled.md has been updated
-
+   1. Tidbit: Git Merging and Maintaining your Notes
+      - tidbit-git-merge.md
+      - will review of W/R
 
 ## Today's Agenda:
-   1. Tidbit: Git Merging and Maintaining your Notes
    1. Instruction Set Architecture 
 
 
