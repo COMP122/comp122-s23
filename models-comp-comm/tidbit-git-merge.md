@@ -19,10 +19,9 @@
      - `git merge origin/main`
    - Types of Merging:
      - No Op: "Already up to date." 
+       ![Graph of a No-OP Merge](documents/git-pull-up-to-date.png)
      - Fast Forward
-
-   ![Graph of a No-OP Merge](documents/noop-merge.png)
-   ![Graph of a Fast-Forward Merge](documents/fast-forward-merge.png)
+       ![Graph of a Fast-Forward Merge](documents/git-pull.png)
 
 
 ## Git Merge: The General Case
@@ -36,29 +35,27 @@
      - File of the same name is in origin/main and working directory.
      - The file is NOT in the local repository.
      - The file in the working directory would be overwritten.
-
      - Example: You created the file notes_02_06.md before the Prof did!
+
        ```
        $ git pull -q
-       error: The following untracked working tree files would be overwritten   by merge:
-       notes_02_06.md
+       error: The following untracked working tree files would be overwritten by merge: notes_02_06.md
        Please move or remove them before you merge.
        Aborting
        $
        ```
 
   1. File IS tracked:
-    - File of the same name is in origin/main and the index
-    - The file has not be committed
-
-    - Example: You modified but did not commit updates to notes_02_06.md
-      ```
-      $ git add notes_02_06.md
-      $ git pull -q
-      error: Your local changes to the following files would be overwritten by merge:
-      shared-file
-      $ 
-      ```
+     - File of the same name is in origin/main and the index
+     - The file has not be committed
+     - Example: You modified but did not commit updates to notes_02_06.md
+ 
+       ```
+       $ git add notes_02_06.md
+       $ git pull -q
+       error: Your local changes to the following files would be overwritten by merge: notes_02_06.md
+       $ 
+       ```
 
 
 ### The Merge Conflict Example
@@ -108,40 +105,40 @@
 
 ### Branches and Merging
    - Create a branch to start independent development
-     * `git branch my_notes`
+     * `git branch branch`
+
    - Checkout the branch to work independently
-     * `git checkout my_notes`
+     * `git checkout branch`
 
    - Perform a merge to incorporate other work
      - To merge independent work back into main
        ```
        git checkout main
-       git merge my_notes
+       git merge branch
        ```
+       ![git merge branch](documents/git-merge-branch.png)
 
      - To merge main into independent work to get important updates
        ```
-       git checkout my_notes
+       git checkout branch
        git merge main
        ```
+       ![git merge main](documents/git-merge-main.png)
 
 
-     ```
-     git checkout current
-     git merge branch           # git rebase branch
-     ```
+   - Types of Merging
 
      | Types of Merging  | Description |
      |-------------------|-------------|
-     | Fast Forward      | HEAD->current moves to HEAD-branch          |
+     | Fast Forward      | HEAD->commit moves to HEAD->branch              |
      | True Merge        | commits are interleaved in chronological order  |
-     | Rebase            | "branch" is shifted to the                  |
+     | Rebase            | "branch" is shifted upto the Head->main         |
   
-  ![Graph of a Fast-Forward Merge](documents/fast-forward-merge.png)
-  ![Graph of a True Merge](documents/true-merge.png)
+     ![Graph of a Fast-Forward Merge](documents/git-merge-ff.png)
+     ![Graph of a True Merge](documents/git-merge-branch.png)
+     \# [Graph of Rebase Merge](documents/git-rebase-branch.png)  # Left for the future
 
-
-
+---
 ## Related Git Commands:
 | Command                 | Description                                    |
 |:------------------------|:-----------------------------------------------|
@@ -181,23 +178,26 @@
 
 ## Branching Procedure for Maintaining your Notes
   1. Initial Setup: 
-     - create a local branch `git branch my_notes`
+     - create a local branch: `git branch my_notes`
   1. Pre-class Routine:
-     - git checkout main
-     - git pull
-     - git checkout my_notes
-     - git merge -m 'merging updates from Prof' main
+     - `git checkout main`
+     - `git pull`
+     - `git checkout my_notes`
+     - `git merge -m 'merging updates from Prof' main`
   1. Update Your Notes Routine:
-     - git checkout my_notes
-     - subl notes_02_06.md
+     - `git checkout my_notes`
+     - `subl notes_02_06.md`
        * edit just the "Notes" section to avoid merge conflicts
-     - git add notes_02_06.md
-     - git commit -m 'my notes from today'
+     - `git commit -m 'my notes from today' notes_02_06.md`
 
-  1. Condensed form will on the "my_notes" branch
-     - git fetch
-     - git merge origin main
+  * Condensed form on the "my_notes" branch
+    - `git fetch`
+    - `git merge -m 'prof updates' origin main`
+    - `subl notes_MM_DD.md`
+    - `git commit -m 'my notes' notes_MM_DD.md`
      
+    ![My Notes graph](documents/my-notes-structure.png)
+
 ---
 ## Notes
 <!-- This section is for students to place their notes -->

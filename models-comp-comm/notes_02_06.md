@@ -30,7 +30,7 @@
 ---
 ## Resources
   - tidbit-git-merge.md
-  - documuments/\*.png
+  - documents/\*.png
 
 ---
 ## Notes
