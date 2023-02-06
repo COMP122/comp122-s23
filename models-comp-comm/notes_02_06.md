@@ -13,14 +13,27 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am:
      - various good questions on git and such
-   * M/W @ 2:00 pm
+   * M/W @ 2:00 pm:
+     - no questions:
    * T/R @ 9:00 am
    * T/R @ 2:00 pm
 
 
 ## Review from Last-time:
+   1. In General, how the high-level languages is converted into binary
+      - how this binary is then executed on the physical hardware directly.
+   1. Abstract Arch:
+      - von Neuemann
+      - Harvard:  
+        - control unit in the middle serving as a traffic cop
+        - two memories: one for instructions and one for data
+
    1. ISO/OSI model, which had 7 layers
       - what each layer does (layer 1-4) to send a message
+        - physical (1): mechanics of sending a series of symbols from A to B
+        - data link (2): interpreting the symbols to get a message from A to B
+        - network (3): sending a message from A to Z, going through B..Y
+        - transport(4): ensure the message got through and efficiently.
       - each layer calls what they send different
         1. layer 1: symbols
         1. layer 2: frames
@@ -29,6 +42,7 @@
         1. layer N: data
    1. Brief overview of IP packet: binary bits that chopped into fields
    1. 4 theoretical machines:  turning machine, linear bound automate, pushdown automate, finite state machine
+      - from the bottom-up we added: 4. state, 3. stack, 2. bounded tape, 1. infinite tape
    1. 4 types of langues: recursively enumerable, context-sensitive, context-free , regular
    1. Boolean Algebra: 
       - 3 primary operations:  and, or , not
