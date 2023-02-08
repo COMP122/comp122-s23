@@ -87,6 +87,7 @@
      - print_42.s
        - MIPS Overview Slides
        - Walk through the MARS interface
+       - CLI use of MARS
 
 
   1. Surface Area of a Box: `surface_area_box.java`
