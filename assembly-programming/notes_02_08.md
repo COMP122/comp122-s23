@@ -85,6 +85,7 @@
        java surface_area_box
        ```
      - print_42.s
+       - MIPS Overview Slides
        - Walk through the MARS interface
 
 
@@ -125,6 +126,8 @@
 ## Resources
    - tidbit-git-merge.md
    - https://classroom.github.com/a/HguPKR5J
+   - documents/mips-overview.txt
+
    - Definition:  Dead Drop
      * prearranged place for the deposit and pickup of information 
 
