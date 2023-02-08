@@ -4,16 +4,16 @@
    1. Lab Day
 
 ## Today's Agenda:
+   1. Practicum I:
    1. Tidbit on Git Merge
-   1. Review of M/T
    1. Mathematical Expressions and Syntax
       - prefix, infix, and postfix notation
       - PEMDAS: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
 
-   1. TAC Expression (Three Address Code for Expressions)
-      - each expression can reference at most three addresses
+   1. TAC Equation (Three Address Code for Equation)
+      - each expression can reference at most three addresses/variable
 
-      | TAC Expression                | MIPS Expression           |
+      | TAC Equations                 | MIPS Instructions         |
       |-------------------------------|---------------------------|
       | `x = imm`                     | `li x, imm`               |
       | `x = a`                       | `move x, a`               |
@@ -31,7 +31,7 @@
         * System.out.printf()
         * System.exit()
 
-      - MIPS ISA
+      - MIPS ISA System Calls
         * Analogy: Use of a Dead-Drop
         * $v0 holds the Service Routine #
           * print integer:   Service Routine #1
@@ -41,28 +41,26 @@
         * `syscall` to trigger the transition form your program to the kernel
 
 
-   1. Practicum: `surface-array-box`
+   1. Practicum II: `surface-array-box`
 
  
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am
-   * M/W @ 2:00 pm
+   * M/W @ 9:00 am: none
+   * M/W @ 2:00 pm 
    * T/R @ 9:00 am
    * T/R @ 2:00 pm
 
-
-## Review from Last-time:
-   1. 
-   1.
-   1. 
       
 
 ---
-## Practicum (Due Feb 10, 2023, 23:59 PST)
+## Practicum I:
   1. Install MIPS syntax package into sublime
-     - Install Package Control
-       * cmd+shift+p 
+     - "Install Package Control"
+       * cmd+shift+p  or Windows+shift+p
+       * Install Package Control
+     - Install mips syntax
+       * cmd+shift+p or Windows+shift+p
        * Package Control: Install Package 
        * mips-syntax
 
@@ -74,15 +72,17 @@
   1. Clone the assignment
      ```
      cd classes/comp122/deliverables
-     git clone git@github.com:comp122/41-expressions-\<username\>.git
-     cd 41-expressions
+     git clone git@github.com:COMP122/41-expressions-\<username\>.git
+     cd 41-expressions-\<username\>
      ```
+
+## Practicum II:
 
   1. Print_42 Discussion
      - print_42.java
        ```
-       javac surface_area_box
-       java surface_area_box
+       javac print_42
+       java print_42
        ```
      - print_42.s
        - MIPS Overview Slides
