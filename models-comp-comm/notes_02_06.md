@@ -15,8 +15,10 @@
      - various good questions on git and such
    * M/W @ 2:00 pm:
      - no questions:
-   * T/R @ 9:00 am
+   * T/R @ 9:00 am:
+     - no questions:
    * T/R @ 2:00 pm
+     - clarity on the difference between von Nuemman and Havard models
 
 
 ## Review from Last-time:
@@ -41,19 +43,37 @@
         1. layer 4: segment
         1. layer N: data
    1. Brief overview of IP packet: binary bits that chopped into fields
-   1. 4 theoretical machines:  turning machine, linear bound automate, pushdown automate, finite state machine
+   1. 4 theoretical machines:  turing machine, linear bound automate, pushdown automate, finite state machine
       - from the bottom-up we added: 4. state, 3. stack, 2. bounded tape, 1. infinite tape
+      - with a turing machine anything that is computable can be solved by the turing machine
+      - linear bound automata is a limited case of the turing machine
+   1. Below the4 theoritcial machines we have two types of digital circuits
+      - combinatial circuits
+        *
+      - sequential circuits
+
+   1. Boolean Algerbra/ Digital circuits:
+      - only use 3 primary gates: and, or, not
+      - only use 3 primary functions: and, or, not
+      * we can build more intersing circuits/functions with just these three
+   1. Boolean Algebra / Combinational Circuit:
+      - we can evaluate any and all functions
+      
+   1. Each of the theoritical machines is defined by a N-tuple
+      - FA(Q, \sigma, q0, F)
+
    1. 4 types of langues: recursively enumerable, context-sensitive, context-free , regular
    1. Boolean Algebra: 
       - 3 primary operations:  and, or , not
       - with these we can build more interesting operations: xor, half-adder,   
    1. MIPS is different than say ARM, and example of a physical architecture
-   1. Universal Computer
+   1. Universal Computer  <- practically a turing machine with a limited tape
       - tape/memory that is large enough
       - control <-> firmware
       - OS is on the tape/memory
-      - Program is on the tap/memory
+      - Program is on the tape/memory
       - input/output from outside device
+   1. Everyone in the room owns at least one universal computer
       
 
 ---
