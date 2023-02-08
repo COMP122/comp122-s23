@@ -10,7 +10,7 @@ subject to change based upon the flow and progress of the class.  The intent of 
 | Section 1  | Models for Communication and Computation             |
 | Section 2  | Data Formats and Encodings for Computing             |
 | Section 3  | Digital Logic: Cobinational and Sequential Circuits  |
-| Section 4  | Three Address Code and Assembly Level Program        |
+| Section 4  | Three Address Code and Assembly Level Programming    |
 
 
 Note that Section 4 will be covered in parallel with the other section of the Class
