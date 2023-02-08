@@ -74,8 +74,8 @@
   1. Clone the assignment
      ```
      cd classes/comp122/deliverables
-     git clone git@github.com:comp122/04-expressions-\<username\>.git
-     cd 04-expressions
+     git clone git@github.com:comp122/41-expressions-\<username\>.git
+     cd 41-expressions
      ```
 
   1. Print_42 Discussion
