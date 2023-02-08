@@ -59,7 +59,7 @@
       
 
 ---
-## Practicum
+## Practicum (Due Feb 10, 2023, 23:59 PST)
   1. Install MIPS syntax package into sublime
      - Install Package Control
        * cmd+shift+p 
