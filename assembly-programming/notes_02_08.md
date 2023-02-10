@@ -47,17 +47,17 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
-   * M/W @ 2:00 pm 
-   * T/R @ 9:00 am
-   * T/R @ 2:00 pm
+   * M/W @ 2:00 pm: none
+   * T/R @ 9:00 am: none
+   * T/R @ 2:00 pm: 
 
       
 
 ---
 ## Practicum I:
   1. Install MIPS syntax package into sublime
-     - "Install Package Control"
-       * cmd+shift+p  or Windows+shift+p
+    - "Install Package Control"
+       * cmd+shift+p  or Windows+shift+p or Ctrl+shift+p
        * Install Package Control
      - Install mips syntax
        * cmd+shift+p or Windows+shift+p
@@ -69,11 +69,11 @@
      open https://classroom.github.com/a/HguPKR5J
      ```
 
-  1. Clone the assignment
+  1. Clone the <b>assignment</b>
      ```
-     cd classes/comp122/deliverables
-     git clone git@github.com:COMP122/41-expressions-\<username\>.git
-     cd 41-expressions-\<username\>
+     cd ~/classes/comp122/deliverables
+     git clone git@github.com:COMP122/41-expressions-<username>.git
+     cd 41-expressions-<username>
      ```
 
 ## Practicum II:
