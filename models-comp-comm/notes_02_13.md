@@ -10,7 +10,7 @@
       ```
    1. The grade.report and grade_guesstimator
       - adminatrative/grade.report.example
-      - bin/grade_esstimator
+      - bin/grade_guesstimator
 
    1. Quiz:  This weekend.
       - Released at: 15:00 on Friday via slack
