@@ -15,3 +15,23 @@
  80 Points:             Total
 
 ASSIGNMENT_02_total="80"
+
+
+### The following is not part of the grade report
+*   4a7b68e (HEAD -> main, origin/main, origin/HEAD) Merge branch 'grading'
+|\  
+| \
+|  * f6964a0 (origin/grading, grading) Added Student Grade and Stats Report
+|  * 94cdd72 Added Answers File
+*  | 6ea77a6 Fixed misspelling
+*  | 02e70df Assignment 2
+*  | 8dbc9af remove
+*  | 4c0964c Update submission.md
+| /
+|/  
+* 2cf6f29 (tag: submission) some message
+* ec49b55 creating file
+* 27f316b some message
+* 7f8ad81 creating file
+* 1ad2882 Initial commit
+

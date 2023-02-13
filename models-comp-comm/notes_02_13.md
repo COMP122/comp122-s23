@@ -12,10 +12,11 @@
       - adminatrative/grade.report.example
       - bin/grade_guesstimator
 
-   1. Quiz:  This weekend.
+   1. Quiz: This weekend.
       - Released at: 15:00 on Friday via slack
       - Due at 23:59 on Sunday
       - Two hour time limit
+
    1. Example Quiz
       - https://github.com/COMP122/quiz-models
       - NOT a study guide
@@ -29,21 +30,50 @@
      
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am:
+   * M/W @ 9:00 am: -- just questions about the test, not the material
    * M/W @ 2:00 pm:
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm
 
 
 ## Review from Last-time:
-   1. 
+   1. Instruction Set Architecture
+      - on level above the physical arch
+      - has 5 main characteristic
+        1. supported data type: integer (signed/unsigned), float, double,
+        1. register: size, number, purpose
+        1. semantics and instructions
+        1. memory: endianess, alignment, layout , addressing,
+        1. OS interface
+
+      - general steps
+        1. fetch
+        1. decode
+        1. execute
+        1. write-back
+   1. Difference between API and a ISA
+   1. RISC / CISC
+   1. Universal Computer
+      - large tape -- large memory
+      - control unit -- firmware
+      - OS -- on tape, and this make a universal computer
+      - generic program -- on tape, and is your program
+      - i/o from outside
+
+
+   1. MIPS
+      - has 5 sub-steps :
+
+
+
+
       
 
 ---
 # Today's Material
   1. Processes
      - See slides
-  1. Potentially: Pickup where we left off on the lab
+  1. Potentially: Pickup where we left off on the lab -- nope, not happening!
 
 ---
 ## Resources
