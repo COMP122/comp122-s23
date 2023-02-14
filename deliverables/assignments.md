@@ -54,20 +54,20 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 
 1. Name: Getting Started
-   - Status: Assigned, Not a graded assignment
+   - Status: Activity Recorded
    - Deliverable ID: 01
    - ~Invitation~ URL: https://github.com/COMP122/comp122-s23
    - Due Date: Jan 23 23:59:59 (ASAP)
 
 1. My First Assignment
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 02
    - Instructions: https://github.com/COMP122/first-assignment
    - Invitation URL: https://classroom.github.com/a/c1oXvbim
    - Due Date: Jan 27 23:59:59
 
 1. Mathematical Review (Credit/No Credit)
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 03
    - Invitation URL: https://classroom.github.com/a/6lST7OTK
    - Due Date: Jan 27 23:59:59
@@ -130,11 +130,11 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
 
-1. Name: 
-   - Status: 
+1. Name: Mathematical Expressions
+   - Status: Released, but not assigned
    - Deliverable ID: 41
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/HguPKR5J
+   - Due Date: Feb 16 23:59:59
 
 1. Name: 
    - Status: 
