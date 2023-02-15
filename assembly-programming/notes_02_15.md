@@ -2,7 +2,7 @@
 
 ## Announcements:
    1. Quiz this weekend
-   1. Finish Lab II
+   1. Finish Lab I
 
 
 ## Today's Agenda:
@@ -11,13 +11,34 @@
    1. Practicum II: `surface-array-box`
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am: 
+   * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am: 
    * T/R @ 2:00 pm: 
 
  
 ## Review from Last     
+  - Process:
+     - System.in   : 0  : stdin
+     - System.out  : 1  : stdout
+     - System.err  : 2  : stderr
+  - The main subroutine: 
+    - formal arguements
+      1. number of command line arguements (int argc,  args.length)
+      1. an array of arguements: (char * argv[], String[] args)
+      1. an associative array of environment variables (char ** envp)
+  - Life cycle of process
+    - Modelled with a FSA 
+  - trap versus interupt
+    - OS is effectively called
+    - trap: syn, inside of my program,  
+      - I have control over those
+      - we want to avoid
+    - interupt: asyn, outside of my program 
+      - no control over the interupt
+      - can't avoid
+
+  
 
 ---
 
@@ -60,7 +81,7 @@
 
     1. Combining Processes 
        1. Pipe-lining:
-          -  cat file | sort | head
+          -  cat file | sort | head -10
        1. Lists:
           - Unconditional:  `;`,  `&`
             * Example: 

@@ -1,4 +1,5 @@
 # This example MIPS program performs the traditional "no-op" process.
+#
 # Simply put, it exercises the following operations
 #   1. a process is created within the MIPS environment
 #   1. a call is made to the main subroutine
