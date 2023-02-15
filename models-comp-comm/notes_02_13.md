@@ -31,8 +31,11 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: -- just questions about the test, not the material
-   * M/W @ 2:00 pm:
-   * T/R @ 9:00 am:
+   * M/W @ 2:00 pm: -- just questions about the test and grading
+   * T/R @ 9:00 am: 
+     - how do you move one file to another directory
+       - mv src dst
+       - git mv src dst
    * T/R @ 2:00 pm
 
 
@@ -53,6 +56,10 @@
         1. write-back
    1. Difference between API and a ISA
    1. RISC / CISC
+      - CISC: example X86, has lots of complex instructions, few registers
+      - RISC, has a few simple instructions,lots of registers
+
+
    1. Universal Computer
       - large tape -- large memory
       - control unit -- firmware
@@ -63,7 +70,23 @@
 
    1. MIPS
       - has 5 sub-steps :
+        - fetch 
+        - decode / operated fetch 
+        - execute -- the ALU computes the mathematical function
+        - memory access (read or write)
+        - write back (to a register)
 
+   1. memory organization
+      - split between code and data
+      - split between kernel and user
+      - kernel: code (ktext) and data (kdata)
+      - user: code (text), data (data), heap, stack  (segments)
+
+
+      - three basic types of instructions:
+        - arithmetic 
+        - data movement
+        - control flow
 
 
 
