@@ -9,7 +9,7 @@
       subl grade.report
       ```
    1. The grade.report and grade_guesstimator
-      - adminatrative/grade.report.example
+      - administrative/grade.report.example
       - bin/grade_guesstimator
 
    1. Quiz: This weekend.
@@ -36,10 +36,14 @@
      - how do you move one file to another directory
        - mv src dst
        - git mv src dst
-   * T/R @ 2:00 pm
+   * T/R @ 2:00 pm: 
+    - how do I move a bunch of files to the same directory
+       - mv src1 src2 ... srcn dst
 
 
 ## Review from Last-time:
+   1. (Turing machine (LBA  (PDA ( FSA (combinational logic))))) )
+
    1. Instruction Set Architecture
       - on level above the physical arch
       - has 5 main characteristic

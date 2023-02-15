@@ -16,7 +16,7 @@
 
 ASSIGNMENT_02_total="80"
 
-
+## $ git log --graph  --oneline
 ### The following is not part of the grade report
 *   4a7b68e (HEAD -> main, origin/main, origin/HEAD) Merge branch 'grading'
 |\  
