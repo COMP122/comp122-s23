@@ -13,7 +13,7 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: none
-   * T/R @ 9:00 am: 
+   * T/R @ 9:00 am: none
    * T/R @ 2:00 pm: 
 
  
@@ -23,25 +23,31 @@
      - System.out  : 1  : stdout
      - System.err  : 2  : stderr
   - The main subroutine: 
-    - formal arguements
-      1. number of command line arguements (int argc,  args.length)
-      1. an array of arguements: (char * argv[], String[] args)
+    - formal arguments
+      1. number of command line arguments (int argc,  args.length)
+      1. an array of arguments: (char * argv[], String[] args)
       1. an associative array of environment variables (char ** envp)
   - Life cycle of process
-    - Modelled with a FSA 
-  - trap versus interupt
+    - Modeled with a FSA 
+  - trap versus interrupt
     - OS is effectively called
     - trap: syn, inside of my program,  
       - I have control over those
       - we want to avoid
-    - interupt: asyn, outside of my program 
-      - no control over the interupt
+    - interrupt: asynchronous, outside of my program 
+      - no control over the interrupt
       - can't avoid
   - rval and lval
+  - registers:
+     - just a piece of small memory, located inside the CPU
+
+  - OSI/ISO and TCP/IP models
+    - host versus network layers
+
 
 ---
 
-## Shell Tid bit:
+## Shell Tidbit:
 
    1. Process:
       - Anatomy:
@@ -147,7 +153,8 @@
         ```
         git add surface_area_box.s
         git commit -m 'my mips program done'
-        git push
+        git push --tags               ## Added to be redundant
+        git push                      ## Added to be on the safe side
         ```
 
 ---
