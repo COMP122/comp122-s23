@@ -12,7 +12,7 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
-   * M/W @ 2:00 pm: 
+   * M/W @ 2:00 pm: none
    * T/R @ 9:00 am: 
    * T/R @ 2:00 pm: 
 
@@ -37,8 +37,7 @@
     - interupt: asyn, outside of my program 
       - no control over the interupt
       - can't avoid
-
-  
+  - rval and lval
 
 ---
 
@@ -85,7 +84,7 @@
        1. Lists:
           - Unconditional:  `;`,  `&`
             * Example: 
-              - `cd class ; cd comp122 ; git pull ;`
+              - `cd ~/classes ; cd comp122 ; git pull ;`
               - `git pull & mars & subl program.s`
           - Conditional  `&&`, `||`
             - `ls program.s && subl program.s`
@@ -134,6 +133,8 @@
         git commit -m 'version 2 of java code'
         git tag java_v2
         git push --tags
+        git push                       ## This line added because some 
+                                       ## students might not get to line 149
         ```
 
   1. MIPS: Surface Area of a Box: `surface_area_box.s`
@@ -146,7 +147,7 @@
         ```
         git add surface_area_box.s
         git commit -m 'my mips program done'
-        git push --tags
+        git push
         ```
 
 ---
