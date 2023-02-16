@@ -7,14 +7,15 @@
 
 ## Today's Agenda:
    1. Review from last lecture (material is on the quiz)
-   1. Tid bit on the shell
+   1. Tidbit on the shell
    1. Practicum II: `surface-array-box`
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: none
    * T/R @ 9:00 am: none
-   * T/R @ 2:00 pm: 
+   * T/R @ 2:00 pm: --
+     - sublime text do I need to register this software
 
  
 ## Review from Last     
@@ -43,6 +44,8 @@
 
   - OSI/ISO and TCP/IP models
     - host versus network layers
+
+  - Dead Drop -- i.e., the OS interface for MIPS
 
 
 ---
@@ -142,7 +145,10 @@
         git push                       ## This line added because some 
                                        ## students might not get to line 149
         ```
+The above is due on Thursday night!
 
+--- 
+The following is delayed till Monday
   1. MIPS: Surface Area of a Box: `surface_area_box.s`
      1. Insert the TAC as a comment block
      1. Translate the TAC into MIPS code
