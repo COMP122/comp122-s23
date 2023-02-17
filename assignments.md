@@ -20,11 +20,11 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 
 1. Quiz 1: Models of Communication and Computation
-   - Status: Pending
+   - Status: Released
    - Additional Information: Online Timed Quiz
    - Deliverable ID: 10
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/JG2CL3In
+   - Due Date: 2 hour limit and before Feb 19 23:59:59
  
 
 1. Exam 2: Formats and Encodings
@@ -131,10 +131,12 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="mips">MIPS Programming (Section 4)</h3>
 
 1. Name: Mathematical Expressions
-   - Status: Released, but not assigned
+   - Status: Released, part one has due date
    - Deliverable ID: 41
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
-   - Due Date: Feb 16 23:59:59
+   - Due Date: 
+     - Part 1:  Java Versions: Feb 16 23:59:59
+     - Part 2:  MIPS Versions: Feb 21 23:59:59
 
 1. Name: 
    - Status: 
