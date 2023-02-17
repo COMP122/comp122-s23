@@ -143,7 +143,7 @@
         git tag java_v2
         git push --tags
         git push                       ## This line added because some 
-                                       ## students might not get to line 149
+                                       ## students might not get to line 164
         ```
 The above is due on Thursday night!
 
