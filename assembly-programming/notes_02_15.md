@@ -149,6 +149,7 @@ The above is due on Thursday night!
 
 --- 
 The following is delayed till Monday
+
   1. MIPS: Surface Area of a Box: `surface_area_box.s`
      1. Insert the TAC as a comment block
      1. Translate the TAC into MIPS code
