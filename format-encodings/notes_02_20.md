@@ -67,6 +67,12 @@
      ```
      
      - Note there are many solution!!
+     ```
+     2hl  + 2hw + 2lw          # 6 mults, 2 adds
+     2(hl + hw + lw)           # 4 mults, 2 adds
+     2(h (l+w) + lw)           # 3 mults, 2 adds
+     x = (h (l+w) + lw); x+x   # 2 mults, 3 adds
+     ```
      - Note the difference in the following instructions:
        ```java
        $v0 = 2 + $t0;     // This instruction is invalid!
