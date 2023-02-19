@@ -121,6 +121,7 @@
         git add surface_area_box.s
         git commit -m 'my mips program done'
         git push --tags
+        git push
         ```
 
 ---
