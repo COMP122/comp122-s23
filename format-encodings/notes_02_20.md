@@ -27,7 +27,8 @@
      
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am:
+   * M/W @ 9:00 am: none
+     - register and register purposes 
    * M/W @ 2:00 pm:
    * T/R @ 9:00 am: 
    * T/R @ 2:00 pm: 
@@ -47,7 +48,7 @@
      //  2 * height * length + 2 * height * width + 2 * length * width;
      
      // Version 1: Single Equation    
-     $v0 = (2 * a0 * a1) + (2 * a0 * a2) + (2 * a1 * a2); 
+     $v0 = (2 * $a0 * $a1) + (2 * $a0 * $a2) + (2 * $a1 * $a2); 
      
      // Version 2: In the style of "Three Address Code"
      $t0 = 2;
@@ -103,6 +104,20 @@
   | `x = a >>> imm`               | `srl a, imm`              |
   | `x = a >> imm`                | `sra a, imm`              |
   | `x = a << imm`                | `sll a, imm`              |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
