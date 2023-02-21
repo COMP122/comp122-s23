@@ -29,12 +29,15 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
      - register and register purposes 
-   * M/W @ 2:00 pm:
-   * T/R @ 9:00 am: 
-   * T/R @ 2:00 pm: 
+   * M/W @ 2:00 pm: none
+   * T/R @ 9:00 am: none
+   * T/R @ 2:00 pm: none
 
 ## Review from Last-time:
-   - ???
+   - T/R Afternoon:
+     - TAC clarification on the number of variables
+     - A[4] --- which way does it go? up or down;
+     - question on circuits and state
 
 ---
 # Today's Material
