@@ -82,6 +82,7 @@
        $v0 = $t0 * 2;     // This instruction is invalid!
        ```
 
+
   1. Walk through of MIPS examples
 
   1. Introduction to Encodings
@@ -104,20 +105,6 @@
   | `x = a >>> imm`               | `srl a, imm`              |
   | `x = a >> imm`                | `sra a, imm`              |
   | `x = a << imm`                | `sll a, imm`              |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ---
