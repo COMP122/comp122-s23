@@ -49,9 +49,6 @@
      - 0x 4865 6C6C 6F20 54
 
 
-
-
-
-
-
-
+---
+## Notes
+<!-- This section is for students to place their notes -->
