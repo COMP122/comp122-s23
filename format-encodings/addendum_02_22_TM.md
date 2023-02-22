@@ -15,8 +15,6 @@
 ### ASCII to HEX
 
 
-
-
-
-
-
+---
+## Notes
+<!-- This section is for students to place their notes -->
