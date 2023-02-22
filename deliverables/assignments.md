@@ -99,17 +99,17 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 <h3 id="format">Format and Encoding (Section 2)</h3>
 
-1. Name: 
-   - Status: 
+1. Name: Table Encodings
+   - Status: Released
    - Deliverable ID: 21
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/syiQChvY
+   - Due Date: March 2 23:59
 
-1. Name: 
-   - Status: 
+1. Name: UTF-8 Encoding
+   - Status: Released
    - Deliverable ID: 22
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/a0psIcuu
+   - Due Date: March 5 23:59
   
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
