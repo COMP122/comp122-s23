@@ -53,4 +53,3 @@
   1. Bitwise Operations
 
   1. Base64 Encoding
-

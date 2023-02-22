@@ -167,3 +167,6 @@ This README.md file provides you with an overview of this structure, key informa
      Note that the substring `dwarf: steve$ ` is my prompt. Your prompt will differ.
 
 If you have any problems completing these tasks, post a message in the #fitzgerald-s23 channel.
+
+
+<!-- git config pull.rebase false -->
