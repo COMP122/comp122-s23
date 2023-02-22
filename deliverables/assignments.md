@@ -72,11 +72,11 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/6lST7OTK
    - Due Date: Jan 27 23:59:59
 
-1. Name: 
-   - Status: 
+1. Name: Mathematical Expressions
+   - Status: Past Due
    - Deliverable ID: 04
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/HguPKR5J
+   - Due Date: Feb 21 23:59
 
 
 
