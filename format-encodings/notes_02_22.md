@@ -16,7 +16,8 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: none
-   * T/R @ 9:00 am: 
+   * T/R @ 9:00 am:
+     - what does the start of frame byte look like?
    * T/R @ 2:00 pm: 
 
 ## Review from Last-time:
