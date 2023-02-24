@@ -18,7 +18,7 @@
    * M/W @ 2:00 pm: none
    * T/R @ 9:00 am:
      - what does the start of frame byte look like?
-   * T/R @ 2:00 pm: 
+   * T/R @ 2:00 pm: none
 
 ## Review from Last-time:
    - ???
