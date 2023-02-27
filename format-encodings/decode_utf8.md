@@ -4,6 +4,7 @@
 
 *  Prerequisite: Convert your UTF-8 string into a binary string.
 1. Chunk the string into bytes
+
 2. Based upon the first-byte's prefix, determine the total number of bytes ('b') used to encode the current UTF-8 character.
 
    | First Byte  | b   |
@@ -15,6 +16,7 @@
 
 
 3. Gather the number of bytes, 'b'.
+
 4. Validate that the following bytes are prefixed with '10'. <br>
    If they are not, the binary string is invalid.
 

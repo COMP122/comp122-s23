@@ -3,7 +3,9 @@
 ## Algorithm: Unicode to UTF-8 Encoding
 
 *  Prerequisite: Convert the Unicode character, e.g., U+00FE, into a binary string: 2# 1111 1110.
+
 1. Determine the position of the most significant bit; let `p` be that value.
+
 2. Consult to following table to determine the value of `l` (length) and `b` (bytes)
 
    | Condition | l = length | b = bytes |
@@ -15,6 +17,7 @@
    
 
 3. Pad/Truncate the binary string to be of length `l`
+
 4. Based upon the value of `b`, chunk the binary string into the following sizes:
    - 1: 7
    - 2: 5, 6
