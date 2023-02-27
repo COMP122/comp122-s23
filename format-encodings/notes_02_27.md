@@ -1,17 +1,19 @@
 # COMP122 Lecture Notes: February 22, 2023
 
 ## Announcements:
-   1. Assignment: 10-quiz-models has been grade
+   1. Assignment: 10-quiz-models has been graded
    1. Assignment: 41-expression to be graded
    1. Assignment: 42-checksum is deferred
       - assignment on bitwise operation is next
 
 ## Today's Agenda:
    1. Practicum:  utf8 encoding/decoding
-   1. Finish "Introduction to Numbering Systems"
+   1. Start "Introduction to Numbering Systems"
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
+     - When is the next quiz/exam?
+     - In 21-encoding, encoding binary to binary -- yes, just copy?
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm: 
