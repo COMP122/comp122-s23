@@ -1,4 +1,4 @@
-# COMP122 Addendum File: February 27, 2023 Tuesday Morning
+# COMP122 Addendum File: February 27, 2023 Tuesday Afternoon
 
 ### Resources:
    1. Encode: encode_utf8.md
@@ -33,12 +33,11 @@
 
    |  b bytes   | First Byte  | Next Byte | Next Byte | Next Byte |
    |------------|------------:|----------:|----------:|----------:|
-   |     4      | ffff 0xxx   | 10 xxxxxx | 10 xxxxxx | 10 xxxxxx |
-   |     3      | fff0 xxxx   | 10 xxxxxx | 10 xxxxxx |           |
-   |     2      | ff0x xxxx   | 10 xxxxxx |           |           |
+   |     4      | 1111 0xxx   | 10 xxxxxx | 10 xxxxxx | 10 xxxxxx |
+   |     3      | 1110 xxxx   | 10 xxxxxx | 10 xxxxxx |           |
+   |     2      | 110x xxxx   | 10 xxxxxx |           |           |
    |     1      | 0xxx xxxx   |           |           |           |
 
-   | -->        | 1110 0010   | 10 011001 | 10 100011 | 10 100011 |
 
 
 * Postrequisite: Decode the binary value into a hexadecimal value.
