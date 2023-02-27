@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: February 22, 2023
+# COMP122 Lecture Notes: February 27, 2023
 
 ## Announcements:
    1. Assignment: 10-quiz-models has been graded
@@ -15,6 +15,7 @@
      - When is the next quiz/exam?
      - In 21-encoding, encoding binary to binary -- yes, just copy?
    * M/W @ 2:00 pm: 
+     - none
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm: 
 
