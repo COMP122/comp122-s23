@@ -3,7 +3,7 @@
   * https://drive.google.com/drive/u/1/folders/1ZLRC2SE5znDr8orhsZveRKd45TQs0A_e
   
 ## Lecture Order
-  1. Introduction to Encodings
+  1. Introduction to Encodings: introduction-to-encodings.pptx
      * Binary Strings
      * Functions/Mapping
      * Fixed Length Encodings
@@ -16,13 +16,20 @@
      * ASCII in Detail
      * Variable Length Encodings:  UTF-8
   
-  1. Introduction to Numbering Systems
+  1. Introduction to Numbering Systems: introduction-to-numbering-systems.pptx
      * Number Representations
      * Computer Limitations
      * Expanded Notation
      * Fix-point Numbers
      * Scientific Notation
      * Floating Point Numbers (foreshadow)
+
+
+  1. Bitwise Operations: bitwise-operations.pptx
+
+  1. Floating Point Encoding: floating-point-encoding.pptx
+
+  ---- 
   
   1. Mathematical Review & Base 2 Encodings
      * Condensed the following into a single slide deck
@@ -47,9 +54,5 @@
      * Base 10 to Base N
      * Base N to Base 10
      * Decimal Real to Binary Real
-
-  1. Floating Point Encoding
-  
-  1. Bitwise Operations
 
   1. Base64 Encoding
