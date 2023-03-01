@@ -8,7 +8,7 @@
 
 ## Today's Agenda:
    1. Practicum:  utf8 encoding/decoding
-   1. Start "Introduction to Numbering Systems"
+   1. "Introduction to Numbering Systems"
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
@@ -17,7 +17,13 @@
    * M/W @ 2:00 pm: 
      - none
    * T/R @ 9:00 am:
+     - Is there a way to automate pulling a number of repos?  Yes, check your comp122/bin/directory
+     - For programming assignments do I need to have a submission.md? NO, follow the spec.
+     - What due we do if we don't have enough digits when we convert
+       - a whole number?  add extra zeros to the left side of the number
+       - a string?  either error or add zeros to the right side
    * T/R @ 2:00 pm: 
+      - none
 
 ## Review from Last-time:
    - ???
