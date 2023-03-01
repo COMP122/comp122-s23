@@ -27,19 +27,19 @@
 
    1. JAVA TAC: 
       - Just a style of program to facility transliteration to Assembly
+      - An exercise in Operational Semantics
 
-      1. Equations: PEMDAS
-      1. Commands/Methods:  Traps to the OS
+      1. Equations: PEMDAS  (done)
       1. Basic Blocks
-         - introduction of label
-         - goto, break, continue
-      1. Control-flow
+         - labels:
+         - statements: goto, break, continue
+      1. Control-flow Constructs
          - if-then-else
          - for loops
          - while loops
-      1. Methods  ()
+      1. Methods (defer till later)
 
-   1. If-then-else
+   1. If-then-else statement:
       ```java
       if ( bool_express ) {
       
@@ -51,11 +51,12 @@
       
       }
       ```
+
    1. If-then-else TAC Transformation
-      1. identify the part of the if-then-else
-      1. add labels to the top of these parts
-      1. insert comments at the end of these parts
-      1. simplify the boolean expression into three parts
+      1. Identify the parts of the if-then-else
+      1. Add labels to the top of each of these parts
+      1. Insert control-flow commands as comments at the end of these parts
+      1. Decompose and Reposition  the boolean expression into three parts
          - evaluate the left-hand side into $l
          - evaluate the righ-hand side into $r
          - test:  $l <cond> $r
@@ -64,7 +65,7 @@
       top:    ;
               // $l = ...
               // $r = ...
-              if ( test ) {       // test: $l <cond> $r
+              if( test ) {       // test: $l <cond> $r
       cons:     ;
                 consequence;
                 // break;
@@ -80,7 +81,7 @@
       top:  nop                            # ;
               # left-eval                  # $l = ...;
               # right-eval                 # $r = ...;
-              b<! cond> $l, $r, alt        # if ( $l <cond> $r ) {
+              b<! cond> $l, $r, alt        # if( $l <cond> $r ) {
       cons:   nop                          #   ;
               # consequence                #   consequence;
               b done                       #   // break;
