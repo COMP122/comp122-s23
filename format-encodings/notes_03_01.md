@@ -12,12 +12,13 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
+     - 21-expression:  use \n or nl to represent 0x0a, don't go to the next lie
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm: 
 
 ## Review from Last-time:
-   - ???
+   - Unpacking the payload
 
 ---
 # Today's Material

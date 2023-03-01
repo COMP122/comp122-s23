@@ -8,13 +8,13 @@ The following steps can be used to convert a binary number represented in scient
 
 
 * Prerequisite:
-  1. Convert the number into binary a binary real: `- 101011.010101`
-  1. Represent the number in scientific notation: `- 1.01011010101 x 2^101`
+  1. Convert the number into binary real number: `- 101011.010101`
+  1. Represent the number in scientific notation: `- 1.01011010101 x 2^ 101`
   1. Parse the number to identify the following components:
        1. the sign of the number: `-`
        1. the coefficient of the number: `1.01011010101`
        1. the sign of the exponent: `+`  <br>
-          (not that the sign is implicit in this example)
+          (note that the sign is implicit in this example)
        1. the exponent: `101`
 
 1. Read the four components into registers.
@@ -30,7 +30,7 @@ The following steps can be used to convert a binary number represented in scient
    2. Exponent:
       - Convert the exponent to a signed integer
         * Set to `- exponent` if "-", otherwise set to `exponent`
-      - Add the bias to the exponent.
+      - Add the bias to the exponent, say 15.
    3. Mantissa: 
       - Determine the number of bits in the coefficient
         * i.e., determine the position of the MSB of the coefficient)
@@ -46,10 +46,10 @@ The following steps can be used to convert a binary number represented in scient
 1. Shift the each of the three fields into their proper location
    * sign = sign   << 31;  // (23+8)
    * expon = expon << 23;
-   * mantissa = mantissa >> 9;
+   * mantissa = mantissa >>> 9;
 
 1. Merge the three fields together
-   * $v0 = sign | expon | mantissa
+   * $v0 = sign | expon | mantissa;
 
 ---
 
@@ -93,7 +93,6 @@ The following steps can be used to convert a binary number represented in scient
 * Based upon the encoding:
   - recalculate the exponent using the correct bias
   - pad/truncate fields to fit into the defined fields
-    * 
 
 1. Binary16 (half):
    - Sign: `1`
@@ -103,7 +102,7 @@ The following steps can be used to convert a binary number represented in scient
 
      | S   | E (5)   | M (10)       | 
      | --: | :-----: | :----------- | 
-     | 1   |  10010  | 0101 1010 10 | 
+     | 1   |  10100  | 0101 1010 10 | 
 
 2. Binary32 (single):   
    - Sign: `1`
