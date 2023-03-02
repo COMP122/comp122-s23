@@ -21,7 +21,7 @@ The following steps can be used to convert a binary number represented in scient
    1. the sign as an ASCII character: `-`
    1. the coefficient of the number in fix point: `101011010101`
       - the radix point is set after the first digit from the left.
-   1. the sign of the exponent as ASCII: `+`
+   1. the sign of the exponent as an ASCII character: `+`
    1. the value of exponent as an unsigned integer
 
 1. Encode each of the three fields of the floating point format:
@@ -33,7 +33,7 @@ The following steps can be used to convert a binary number represented in scient
       - Add the bias to the exponent, say 15.
    3. Mantissa: 
       - Determine the number of bits in the coefficient
-        * i.e., determine the position of the MSB of the coefficient)
+        * i.e., determine the position of the MSb of the coefficient
       - Shift the normalized number to obtain the mantissa
         * the mantissa, which represents a fractional value is now left justified in the register
 
