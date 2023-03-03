@@ -26,15 +26,15 @@ The following steps can be used to convert a binary number represented in scient
 
 1. Encode each of the three fields of the floating point format:
    1. Sign: 
-      - Set to `1` if "-", otherwise set to `0` otherwise
+      - Set to `1` if '-', otherwise set to `0` otherwise
    2. Exponent:
       - Convert the exponent to a signed integer
-        * Set to `- exponent` if "-", otherwise set to `exponent`
-      - Add the bias to the exponent, say 15.
+        * Set to `- exponent` if '-', otherwise set to `exponent`
+      - Add the bias to the exponent, say 15 for binary32.
    3. Mantissa: 
       - Determine the number of bits in the coefficient
         * i.e., determine the position of the MSb of the coefficient
-      - Shift the normalized number to obtain the mantissa
+      - Shift the normalized number to to the left, until the MSb of the coefficient is removed
         * the mantissa, which represents a fractional value is now left justified in the register
 
 1. Consider the format of binary32, a floating point format
@@ -43,10 +43,11 @@ The following steps can be used to convert a binary number represented in scient
    | --------:| :-----------: | :--------------------------- | 
    |  x       |   xxxx xxxx   | xxxx xxxx xxxx xxxx xxxx xxx |
 
-1. Shift the each of the three fields into their proper location
+1. Shift the each of the three fields into their proper location.<br>
+   For binary32, this is accomplished via the following three statements together.
    * sign = sign   << 31;  // (23+8)
    * expon = expon << 23;
-   * mantissa = mantissa >>> 9;
+   * mantissa = mantissa >>> 9 (1 + 8);
 
 1. Merge the three fields together
    * $v0 = sign | expon | mantissa;
@@ -87,7 +88,7 @@ The following steps can be used to convert a binary number represented in scient
   - the sign of the exponent: `+`
   - the exponent: `101`
 
-* Determine the value of the mantissa: `01011010101`
+* Determine the value of the mantissa: `01011010101`  
   - note that this value must always be left justified
 
 * Based upon the encoding:

@@ -12,13 +12,19 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
-     - 21-expression:  use \n or nl to represent 0x0a, don't go to the next lie
+     - 21-expression:  use \n or nl to represent 0x0a, don't go to the next line
    * M/W @ 2:00 pm: 
+     - $13
+     - 0x versus binary string
+     - number of bits in the encoding of "blah"  where 2^n = blah
    * T/R @ 9:00 am:
+     - 
    * T/R @ 2:00 pm: 
+     - 
 
 ## Review from Last-time:
    - Unpacking the payload
+
 
 ---
 # Today's Material
@@ -57,10 +63,10 @@
       1. Identify the parts of the if-then-else
       1. Add labels to the top of each of these parts
       1. Insert control-flow commands as comments at the end of these parts
-      1. Decompose and Reposition  the boolean expression into three parts
+      1. Decompose and Reposition the boolean expression into three parts
          - evaluate the left-hand side into $l
          - evaluate the righ-hand side into $r
-         - test:  $l <cond> $r
+         - perform a simple test:  $l <cond> $r
       
       ```java tac
       top:    ;
