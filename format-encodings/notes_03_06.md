@@ -20,6 +20,7 @@
           - Accept the assignment by: March 7 23:59
           - Redo the assignment
           - Due: March 9 23:59
+          
    1. Assignment: 43-binary32 has been or will be assigned.
       - Due: March 12 23:59
 
