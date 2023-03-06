@@ -84,17 +84,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 <h3 id="models">Models of Computation and Communication (Section 1)</h3>
 
-1. Name: 
-   - Status: 
-   - Deliverable ID: 11
-   - Invitation URL: 
-   - Due Date: 
-
-1. Name: 
-   - Status: 
-   - Deliverable ID: 12
-   - Invitation URL: 
-   - Due Date: 
+1. Name:  No assignments
 
 
 <h3 id="format">Format and Encoding (Section 2)</h3>
@@ -110,7 +100,13 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Deliverable ID: 22
    - Invitation URL: https://classroom.github.com/a/a0psIcuu
    - Due Date: March 5 23:59
-  
+ 
+ 1. Name: Base Conversion and Floating Point Representation
+   - Status: Released
+   - Deliverable ID: 23
+   - Invitation URL: https://classroom.github.com/a/gz_mKhjN
+   - Due Date: March 12 23:59:59
+   
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
 
@@ -131,13 +127,29 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="mips">MIPS Programming (Section 4)</h3>
 
 1. Name: Mathematical Expressions
-   - Status: Released, part one has due date
+   - Status: Graded
    - Deliverable ID: 41
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
    - Due Date: 
      - Part 1:  Java Versions: Feb 16 23:59:59
      - Part 2:  MIPS Versions: Feb 21 23:59:59
 
+1. Name: Mathematical Expressions Redux
+   - Status: Released
+   - Deliverable ID: 42
+   - Invitation URL: https://classroom.github.com/a/Ijqpjvtl
+   - Due Dates: 
+     - Accept Assignment: March 7 23:59:59
+     - Final Submission: March 9 23:59:59
+     
+
+1. Name: binary32 Encoding
+   - Status: Released, part one has due date
+   - Deliverable ID: 41
+   - Invitation URL: https://classroom.github.com/a/HguPKR5J
+   - Due Date: 
+     - Part 1:  Java Versions: Feb 16 23:59:59
+     
 1. Name: 
    - Status: 
    - Deliverable ID: 42

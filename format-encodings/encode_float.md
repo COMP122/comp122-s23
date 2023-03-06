@@ -34,7 +34,7 @@ The following steps can be used to convert a binary number represented in scient
    3. Mantissa: 
       - Determine the number of bits in the coefficient
         * i.e., determine the position of the MSb of the coefficient
-      - Shift the normalized number to to the left, until the MSb of the coefficient is removed
+      - Shift the coefficient number to the left, until the MSb of the coefficient is removed
         * the mantissa, which represents a fractional value is now left justified in the register
 
 1. Consider the format of binary32, a floating point format
