@@ -144,15 +144,14 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
      
 
 1. Name: binary32 Encoding
-   - Status: Released, part one has due date
-   - Deliverable ID: 41
-   - Invitation URL: https://classroom.github.com/a/HguPKR5J
-   - Due Date: 
-     - Part 1:  Java Versions: Feb 16 23:59:59
+   - Status: Released,
+   - Deliverable ID: 43
+   - Invitation URL:
+   - Due Date: March 12 23:59
      
 1. Name: 
    - Status: 
-   - Deliverable ID: 42
+   - Deliverable ID: 44
    - Invitation URL: 
    - Due Date: 
 

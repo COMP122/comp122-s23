@@ -1,7 +1,7 @@
 # COMP122 Lecture Notes: March 1, 2023
 
 ## Announcements:
-   1. Assignment: 23-floating-point to be assigned 
+   1. Assignment: 23-floating-point has been assigned 
       - Due: March 12 23:59:59
 
    1. Assignment: 42-expressions has been assigned
@@ -64,7 +64,7 @@
       ```java
       //  Bubble Sort:
       for (i=0; i<9; i++) {
-        for (j=i; j<10; i++) {
+        for (j=i+1; j<10; i++) {
 
           ///////////////////////////////
           // Min Switch
@@ -106,7 +106,7 @@
          ```
          
          ```mips
-         top:  nop                            # ;
+         top:    nop                          # ;
                  # left-eval                  # $l = ...;
                  # right-eval                 # $r = ...;
                  b<! cond> $l, $r, alt        # if( $l <cond> $r ) {
@@ -129,6 +129,50 @@
 
   * Integer Conversion and Encoding:
     - https://www.csun.edu/~steve/classes/integers-conversion-encoding/index.html#integer
+
+  * TAC Instructions and Corresponding MIPS Instructions
+
+      | TAC Equations                 | MIPS Instructions         |
+      |-------------------------------|---------------------------|
+      | `x = imm;`                    | `li x, imm`               |
+      | `x = a;`                      | `move x, a`               |
+      | `x = a + imm; `               | `addi x, a, imm`          |
+      | `x = a - imm; `               | `subi x, a, imm`          |
+      | `x = a + b;`                  | `add x, a, b`             |
+      | `x = a - b;`                  | `sub x, a, b`             |
+      | `x = a * b;`                  | `mul x, a, b`             |
+      | `x = a >>> imm;`              | `srl a, imm`              |
+      | `x = a >> imm;`               | `sra a, imm`              |
+      | `x = a << imm;`               | `sll a, imm`              |
+
+      | TAC Instruction               | MIPS Instruction          |
+      |-------------------------------|---------------------------|
+      | `if (a <cond> b) {`           | `b<! cond> a, b, alt`     |
+      | `else {`                      | `# end of block`          |
+      | `for(; a <cond> b ;) {`       | `b<! cond> a, b, done`    |
+      | `while(a <cond> b) {`         | `b<! cond> a, b, done`    |
+      | `continue;`                   | `b loop`                  |
+      | `// break;`                   | `b done`                  |
+      | `break;`                      | `b done`                  |
+      | `}`                           | `# end of block`          |
+
+
+      | `TAC <cond>` | `MIPS <cond>` | `MIPS <! cond>` |`TAC <! cond>` |
+      |:------------:|:-------------:|:---------------:|:-------------:|
+      | `<`          | `lt`          | `ge`            |  `>=`         |
+      | `<=`         | `le`          | `gt`            |  `>`          |
+      | `!=`         | `ne`          | `eq`            |  `==`         |
+      | `==`         | `eq`          | `ne`            |  `!=`         |
+      | `>=`         | `ge`          | `lt`            |  `<`          |
+      | `>`          | `gt`          | `le`            |  `>=`         |
+   
+      | JAVA: MIPS OS Interface       | MIPS Macro                |
+      |-------------------------------|---------------------------|
+      | `mips.print_t(a);`            | `print_t(a)`              |
+      | `mips.print_ti(imm);`         | `print_ti(imm)`           |
+      | `mips.print_c(a);`            | `print_c(a)`              |
+      | `mips.print_ci(imm);`         | `print_ci(imm)`           |
+
 
 ---
 ## Notes
