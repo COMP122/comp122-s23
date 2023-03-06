@@ -146,7 +146,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 1. Name: binary32 Encoding
    - Status: Released,
    - Deliverable ID: 43
-   - Invitation URL:
+   - Invitation URL: https://classroom.github.com/a/L_lMxoNI
    - Due Date: March 12 23:59
      
 1. Name: 
