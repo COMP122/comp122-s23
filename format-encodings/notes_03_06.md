@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: March 1, 2023
+# COMP122 Lecture Notes: March 6, 2023
 
 ## Announcements:
    1. Assignment: 23-floating-point has been assigned 
@@ -20,7 +20,7 @@
           - Accept the assignment by: March 7 23:59
           - Redo the assignment
           - Due: March 9 23:59
-          
+
    1. Assignment: 43-binary32 has been or will be assigned.
       - Due: March 12 23:59
 
@@ -41,8 +41,8 @@
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am: 
-   * M/W @ 2:00 pm: 
+   * M/W @ 9:00 am: none
+   * M/W @ 2:00 pm: none
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm: 
 
@@ -64,8 +64,8 @@
 
       ```java
       //  Bubble Sort:
-      for (i=0; i<9; i++) {
-        for (j=i+1; j<10; i++) {
+      for (i=0; i<10; i++) {
+        for (j=0; j<10; i++) {
 
           ///////////////////////////////
           // Min Switch
