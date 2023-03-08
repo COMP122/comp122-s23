@@ -43,8 +43,9 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: none
-   * T/R @ 9:00 am:
+   * T/R @ 9:00 am: none
    * T/R @ 2:00 pm: 
+     - yes, you must do 42-expressions over even if you got a 98
 
 ## Review from Last-time:
 
@@ -149,7 +150,7 @@
       | TAC Instruction               | MIPS Instruction          |
       |-------------------------------|---------------------------|
       | `if (a <cond> b) {`           | `b<! cond> a, b, alt`     |
-      | `else {`                      | `# end of block`          |
+      | `} else {`                    | `# end of block`          |
       | `for(; a <cond> b ;) {`       | `b<! cond> a, b, done`    |
       | `while(a <cond> b) {`         | `b<! cond> a, b, done`    |
       | `continue;`                   | `b loop`                  |
