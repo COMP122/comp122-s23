@@ -612,8 +612,8 @@ function post_process () {
      exit 1
   fi
 
-
-  pretty_print_output "${SUB_RETURN_LINE}"
+# BUG
+#  pretty_print_output "${SUB_RETURN_LINE}"
 
 
   # Perform the post processing
@@ -646,11 +646,12 @@ function post_process () {
   } >${ERROR_FILE}
 
 
-  if (( SUMMARIZE == TRUE ||  
-        num_regs > num_system_regs  || 
-        $(wc -l < ${ERROR_FILE}) > 0 )) ; then 
-        echo  # "==========================================================="
-  fi
+  # This always triggers:  BUG
+  # if (( SUMMARIZE == FALSE ||  
+  #       num_regs > num_system_regs  || 
+  #       $(wc -l < ${ERROR_FILE}) > 0 )) ; then 
+  #       echo  # "==========================================================="
+  # fi
 
   if [[ ${SUMMARIZE} == TRUE ]] ; then
     subroutine_summary
