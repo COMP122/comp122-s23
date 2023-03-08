@@ -17,14 +17,15 @@
  
    1. Lab Time..
 
-   1. For-loop and while-loop statements:  (Same thing in Java)
+   1. For-loop and while-loop statements
 
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
    * M/W @ 2:00 pm:
    * T/R @ 9:00 am:
-   * T/R @ 2:00 pm: 
+   * T/R @ 2:00 pm:
+
 
 ## Review from Last-time:
 
@@ -147,7 +148,7 @@
         ```
       - pos_msb = position_most_significant_bit(coefficient);
         * Error in naming in the Prof's code
-          - position_of_msb versus position_most_significant_bit
+          - position_of_msb() versus position_most_significant_bit()
         * Missing transliteration for TAC for Macro Call
           - Java
             ```java
@@ -187,7 +188,8 @@
      ```
 
      - On the fly examples:
-       1. print cli arguments
+       1. ASCII Encode Table
+       1. print CLI arguments
        1. count down
        1. summation
 
@@ -209,6 +211,17 @@
       | `x = a >>> imm;`              | `srl a, imm`              |
       | `x = a >> imm;`               | `sra a, imm`              |
       | `x = a << imm;`               | `sll a, imm`              |
+
+
+      | JAVA: Special Method          | MIPS Macro                |
+      |-------------------------------|---------------------------|
+      | `x = special(a)`              | `special(a)`              |
+      |                               | `move x, $v0`             |
+
+      Note the above is table is just for the method the Prof provided
+      to you called "position_most_significant_bit"
+
+
 
       | TAC Instruction               | MIPS Instruction          |
       |-------------------------------|---------------------------|
@@ -238,7 +251,7 @@
       | `mips.print_c(a);`            | `print_c(a)`              |
       | `mips.print_ci(imm);`         | `print_ci(imm)`           |
 
-
+  
 ---
 ## Notes
 <!-- This section is for students to place their notes -->
