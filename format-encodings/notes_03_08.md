@@ -21,8 +21,9 @@
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am: 
-   * M/W @ 2:00 pm:
+   * M/W @ 9:00 am: none
+   * M/W @ 2:00 pm: 
+     - what is the data type for a 1 byte of storage?
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm:
 
@@ -51,16 +52,24 @@
 
        ```
        .macro print_t(%reg)
+         move $a0, %reg
+         li $v0, 35
+         syscall
+       .end_macro
+
+       .macro print_ti(%imm)
          li $a0, %imm
          li $v0, 35
          syscall
        .end_macro
+
        ```
 
      - Example Usage
 
        ```
        print_t $t1
+       print_ti 0x34AF34
        ```
 
   1. printf:  formats and prints
@@ -70,7 +79,7 @@
 
         ```
         int A = 42;
-        System.out.printf("The value of A: %x\n")   //  "The value of A: 2A"
+        System.out.printf("The value of A: %x\n", A)   //  "The value of A: 2A"
         ```
       - Description: Decodes the variable into a human readable format
 
@@ -100,19 +109,15 @@
         ```bash
         $ mips_subroutine encode_binary32 '+' 0x34E1 '-' 41
         00101011010100111000010000000000
-        726893568
 
         $ mips_subroutine encode_binary32 '+' 2#0011010011100001 '-' 2#0101001
         00101011010100111000010000000000
-        726893568
      
         $ mips_subroutine encode_binary32 '+' '2#1 1010011100001' '-' '2#010 1001'
         00101011010100111000010000000000
-        726893568
      
         $ mips_subroutine encode_binary32 0x2b 0x34E1 0x2d 0x29 
         00101011010100111000010000000000
-        726893568
         ```
 
      1. Additional Test Cases
@@ -213,15 +218,7 @@
       | `x = a << imm;`               | `sll a, imm`              |
 
 
-      | JAVA: Special Method          | MIPS Macro                |
-      |-------------------------------|---------------------------|
-      | `x = special(a)`              | `special(a)`              |
-      |                               | `move x, $v0`             |
-
-      Note the above is table is just for the method the Prof provided
-      to you called "position_most_significant_bit"
-
-
+ x
 
       | TAC Instruction               | MIPS Instruction          |
       |-------------------------------|---------------------------|

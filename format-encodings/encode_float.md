@@ -13,7 +13,7 @@ The following steps can be used to convert a binary number represented in scient
   1. Parse the number to identify the following components:
        1. the sign of the number: `-`
        1. the coefficient of the number: `1.01011010101`
-       1. the sign of the exponent: `+`  <br>
+       1. the sign of the exponent: `+`
           (note that the sign is implicit in this example)
        1. the exponent: `101`
 
@@ -30,7 +30,7 @@ The following steps can be used to convert a binary number represented in scient
    2. Exponent:
       - Convert the exponent to a signed integer
         * Set to `- exponent` if '-', otherwise set to `exponent`
-      - Add the bias to the exponent, say 15 for binary32.
+      - Add the bias to the exponent, say 127 for binary32.
    3. Mantissa: 
       - Determine the number of bits in the coefficient
         * i.e., determine the position of the MSb of the coefficient
