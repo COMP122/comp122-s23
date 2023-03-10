@@ -13,7 +13,7 @@
 
    1. Testing Harness for MIPS subroutines
 
-   1. 42-binary32 Errata / Clarification 
+   1. binary32 Errata / Clarification 
  
    1. Lab Time..
 
@@ -24,7 +24,7 @@
    * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: 
      - what is the data type for a 1 byte of storage?
-   * T/R @ 9:00 am:
+   * T/R @ 9:00 am: none
    * T/R @ 2:00 pm:
 
 
@@ -91,7 +91,7 @@
         | A unsigned #     |  %u  | printf("%u", a);  | print_u(a)     |
         | An octal #       |  %o  | printf("%o", a);  | print_o(a)     |
         | A hexadecimal #  |  %x  | printf("%x", a);  | print_x(a)     |
-        | A binary #       |      |                   | print_t(a)     |
+        | A binary #       |  %t  |                   | print_t(a)     |
         | A percent        |  %%  | printf("%%");     | print_ci('%')  |
         | A new-line       |  \n  | printf("\n");     | print_ci('\n') |
         | A return         |  \r  | printf("\r");     | print_ci('\r') |
