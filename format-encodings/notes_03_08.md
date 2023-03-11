@@ -213,12 +213,13 @@
       | `x = a + b;`                  | `add x, a, b`             |
       | `x = a - b;`                  | `sub x, a, b`             |
       | `x = a * b;`                  | `mul x, a, b`             |
-      | `x = a >>> imm;`              | `srl a, imm`              |
-      | `x = a >> imm;`               | `sra a, imm`              |
-      | `x = a << imm;`               | `sll a, imm`              |
+      | `x = a >>> imm;`              | `srl x, a, imm`           |
+      | `x = a >> imm;`               | `sra x, a, imm`           |
+      | `x = a << imm;`               | `sll x, a, imm`           |
+      | `x = a >>> b;`                | `srlv x, a, b`            |
+      | `x = a >> b;`                 | `srav x, a, b`            |
+      | `x = a << b;`                 | `sllv x, a, b`            |
 
-
- x
 
       | TAC Instruction               | MIPS Instruction          |
       |-------------------------------|---------------------------|
