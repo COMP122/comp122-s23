@@ -52,8 +52,9 @@
   done: ;
   ```
 
-  1. MIPS
+  1. MIPS (Test from ~/classes/comp122/mips)
   ```mips
+            .text
             .include "macros/syscalls.s"
 
 
