@@ -186,6 +186,7 @@
 
       | TAC Instruction               | MIPS Instruction          |
       |-------------------------------|---------------------------|
+      | `label: ;`                    | `label: nop`              |
       | `if (a <cond> b) {`           | `b<! cond> a, b, alt`     |
       | `else {`                      | `# end of block`          |
       | `for(; a <cond> b ;) {`       | `b<! cond> a, b, done`    |
