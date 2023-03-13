@@ -26,7 +26,7 @@
          ```bash
          "Exception in thread "main" java.lang.UnsupportedClassVersionError: MIPS_OS_Interface has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 62.0"
          ```
-         * upgrade your java JDK version
+         * upgrade your Java JDK version
          * recompile "MIPS_OS_Interface.java"
            - java MIPS_OS_Interface.java
 
@@ -41,7 +41,7 @@
          ```
          > One of the main reasons why `mips_subroutine` was provided to you
 
-      1. Calling mips_subroutine with the wrong number of args:
+      1. Calling mips_subroutine with the no arguements:
          ```
          Error in .boot.s line 12 column 23: Symbol "arg_0" not found in symbol table.
          ```
@@ -90,7 +90,7 @@
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am:
+   * M/W @ 9:00 am: 
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm:
@@ -111,7 +111,7 @@
   1. printf:  formats and prints
   1. Testing Harness for MIPS subroutines
      ```bash
-     $ mips_subroutine encode_binary32 '+' '2#1 1010011100001' '-' '2#010 1001'
+     $ mips_subroutine -a encode_binary32 -t '+' '2#1 1010011100001' '-' '2#010 1001'
      00101011010100111000010000000000
      ```
 
@@ -132,15 +132,17 @@
 
      ```java TAC
      init:    ;
-              i=0;  // init
-              ;     // left-right eval
-     loop:    for(; i<limit; ) {
+              i=0;        // init
+              $l = i;     // left-right eval
+              $r = limit;
+     loop:    for(; $l < $r ; ) {
      body:       ;          
                  // body;
      
      next:       ;
-                 i++;  // next
-                 // left-right eval
+                 i++;        // next
+                 $l = i;     // left-right eval
+                 $r = limit;
 
                  continue;
               }
@@ -149,9 +151,9 @@
 
      - On the fly examples:
        1. ASCII Encode Table
-       1. Print CLI arguments
        1. Count down
        1. Summation
+       1. Reduction
 
 
 ---
@@ -167,6 +169,7 @@
 
       | TAC Equations                 | MIPS Instructions         |
       |-------------------------------|---------------------------|
+      | `;`                           | `nop`                     |
       | `x = imm;`                    | `li x, imm`               |
       | `x = a;`                      | `move x, a`               |
       | `x = a <op_i> imm; `          | `<op_i> x, a, imm`        |
@@ -187,7 +190,7 @@
       | `else {`                      | `# end of block`          |
       | `for(; a <cond> b ;) {`       | `b<! cond> a, b, done`    |
       | `while(a <cond> b) {`         | `b<! cond> a, b, done`    |
-      | `continue;`                   | `b top`                   |
+      | `continue;`                   | `b loop`                  |
       | `// break;`                   | `b done`                  |
       | `break;`                      | `b done`                  |
       | `}`                           | `# end of block`          |
