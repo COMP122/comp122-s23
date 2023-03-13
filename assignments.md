@@ -90,7 +90,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="format">Format and Encoding (Section 2)</h3>
 
 1. Name: Table Encodings
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 21
    - Invitation URL: https://classroom.github.com/a/syiQChvY
    - Due Date: March 2 23:59
@@ -116,13 +116,6 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: 
    - Due Date: 
 
-1. Name: 
-   - Status: 
-   - Deliverable ID: 32
-   - Invitation URL: 
-   - Due Date: 
-
-
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
 
@@ -135,7 +128,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
      - Part 2:  MIPS Versions: Feb 21 23:59:59
 
 1. Name: Mathematical Expressions Redux
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 42
    - Invitation URL: https://classroom.github.com/a/Ijqpjvtl
    - Due Dates: 

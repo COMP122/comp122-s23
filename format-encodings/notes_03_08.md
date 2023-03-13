@@ -17,7 +17,8 @@
  
    1. Lab Time..
 
-   1. For-loop and while-loop statements
+   1. For-loop and while-loop statements 
+      - deferred till next week
 
 
 ## Questions from Last Lecture/Lab, etc.:
@@ -168,6 +169,8 @@
   1. Lab Time..
 
   1. For-loop and while-loop statements:  (Same thing in Java)
+     - deferred till next week
+
      - Simple Example
 
      ```java
