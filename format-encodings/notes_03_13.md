@@ -5,11 +5,84 @@
       - 21-table-encodings: graded
       - 42-expressions: graded
       - Spring break next week
-   1. Slack Search
-      - what an answer to a problem?
-      - chances are another student has already asked?
-      - search slack to see if there is already a solution provided
 
+   1. Issues:
+      1. Just-in-time learning (an example)
+          > 43-binary32: 
+          > accepted at Mar 12 22:16 
+          > due at Mar 12 23:59
+
+      1. tl;dr 
+         > The more words I put into README.md, ...
+         > The greater the probability you will read it
+
+      1. java encode_binary32.java 
+         > Project containts two class files,
+         > Per the directions:  
+           1. `javac encode_binary32.java`
+           1. `java encode_binary32`
+
+      1. java encode_binary32
+         ```bash
+         "Exception in thread "main" java.lang.UnsupportedClassVersionError: MIPS_OS_Interface has been compiled by a more recent version of the Java Runtime (class file version 63.0), this version of the Java Runtime only recognizes class file versions up to 62.0"
+         ```
+         * upgrade your java JDK version
+         * recompile "MIPS_OS_Interface.java"
+           - java MIPS_OS_Interface.java
+
+      1. No Main subroutine in encode_binary32.s. 
+         > I.e., no place for the subroutine to return to..
+         ```
+         $ mars encode_binary32.s
+         MARS 4.5  Copyright 2003-2014 Pete Sanderson and Kenneth Vollmar
+         00101011010100111000010000000000
+         Error in : invalid program counter value: 0x00000000
+         Processing terminated due to errors.
+         ```
+         > One of the main reasons why `mips_subroutine` was provided to you
+
+      1. Calling mips_subroutine with the wrong number of args:
+         ```
+         Error in .boot.s line 12 column 23: Symbol "arg_0" not found in symbol table.
+         ```
+         - technically a bug in my program  `mips_subroutine`
+         - update to fix the problem is forth-coming
+           * you will need to do a `git pull` to get the update
+
+      1. Updated information in the spec (i.e. README.md)
+         ```$ git push
+          To github.com:COMP122/43-binary32-smf-steve.git
+           ! [rejected]        main -> main (non-fast-forward)
+          error: failed to push some refs to 'github.com:COMP122/43-binary32-smf-steve.git'
+          hint: Updates were rejected because the tip of your current branch is behind
+          hint: its remote counterpart. Integrate the remote changes (e.g.
+          hint: 'git pull ...') before pushing again.
+          hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+          ```
+         - Read the output from the command
+   ---
+
+   1. ChatGPT
+      - Pondents say.. is posed to be a game changer in Academia, etc.
+      - It can provide ~answers~ solutions to many problems
+        - Provide me with a Java program that ....
+      - data -> information -> knowledge -> wisdom
+      - In the world to come..as it always has been
+        - It is all about asking a well-thought questions!
+
+   ---
+
+   1. Slack Search
+      - Want an answer to a problem?
+      - Chances are another student has already asked!
+      - Search slack to see if there is already a solution provided.
+      - If not, provide a well-though out question!
+
+   1. Grading
+      - Will grade 43-binary32 on Friday
+        - you may continue to work on it unitl Thursday Mar 23:59:59
+        - a late penalty will be applied (how much?, it depends!)
+      
 
 ## Today's Agenda:
 
@@ -19,7 +92,7 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am:
    * M/W @ 2:00 pm: 
-   * T/R @ 9:00 am: none
+   * T/R @ 9:00 am:
    * T/R @ 2:00 pm:
 
 
