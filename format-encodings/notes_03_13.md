@@ -5,6 +5,10 @@
       - 21-table-encodings: graded
       - 42-expressions: graded
       - Spring break next week
+   1. Slack Search
+      - what an answer to a problem?
+      - chances are another student has already asked?
+      - search slack to see if there is already a solution provided
 
 
 ## Today's Agenda:
@@ -64,7 +68,7 @@
      next:       ;
                  i++;  // next
                  // left-right eval
-                 
+
                  continue;
               }
      done:    ; 
