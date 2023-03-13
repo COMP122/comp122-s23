@@ -17,7 +17,7 @@
          > The greater the probability you will read it
 
       1. java encode_binary32.java 
-         > Project containts two class files,
+         > Project contains two class files,
          > Per the directions:  
            1. `javac encode_binary32.java`
            1. `java encode_binary32`
@@ -41,7 +41,7 @@
          ```
          > One of the main reasons why `mips_subroutine` was provided to you
 
-      1. Calling mips_subroutine with the no arguements:
+      1. Calling mips_subroutine with the no arguments:
          ```
          Error in .boot.s line 12 column 23: Symbol "arg_0" not found in symbol table.
          ```
@@ -63,7 +63,7 @@
    ---
 
    1. ChatGPT
-      - Pondents say.. is posed to be a game changer in Academia, etc.
+      - Pundits say.. is posed to be a game changer in Academia, etc.
       - It can provide ~answers~ solutions to many problems
         - Provide me with a Java program that ....
       - data -> information -> knowledge -> wisdom
@@ -80,7 +80,7 @@
 
    1. Grading
       - Will grade 43-binary32 on Friday
-        - you may continue to work on it unitl Thursday Mar 23:59:59
+        - you may continue to work on it until Thursday Mar 23:59:59
         - a late penalty will be applied (how much?, it depends!)
       
 
@@ -109,9 +109,10 @@
        ```
 
   1. printf:  formats and prints
+
   1. Testing Harness for MIPS subroutines
      ```bash
-     $ mips_subroutine -a encode_binary32 -t '+' '2#1 1010011100001' '-' '2#010 1001'
+     $ mips_subroutine encode_binary32 '+' '2#1 1010011100001' '-' '2#010 1001'
      00101011010100111000010000000000
      ```
 
@@ -148,6 +149,60 @@
               }
      done:    ; 
      ```
+
+    ```mips
+
+    # Bookkeeping Table
+    # t0: i
+    # t1: $l
+    # t2: $r
+    # t3: limit
+    #
+    init:  nop                   # ;
+           li $t0, 0             # i=0;        // init
+           move $t1, $t0         # $l = i;     // left-right eval
+           move $t2, $t3         # $r = limit;
+    loop:  bge $t1, $t2, done    # for(; $l < $r ; ) {
+    body:     nop                #    ;          
+                                 #    // body;
+    
+    next:     nop                #    ;
+              addi $t0, $t0, 1   #    i++;        // next
+
+              move $t1, $t0         # $l = i;     // left-right eval
+              move $t2, $t3         # $r = limit;
+ 
+           b loop             #    continue;
+                                 # }
+    done:     nop                # ; 
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      - On the fly examples:
        1. ASCII Encode Table
