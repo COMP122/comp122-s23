@@ -46,21 +46,24 @@
      - Simple Example
 
      ```java
-     for( i=0; i < top ; i++) {
-      
+     for( i=0; i < limit ; i++) {
+       
+       // body
       
      }
      ```
 
      ```java TAC
      init:    ;
-              i=0;
-     loop:    for(; i<top; ) {
+              i=0;  // init
+              ;     // left-right eval
+     loop:    for(; i<limit; ) {
      body:       ;          
-                 body;
+                 // body;
      
      next:       ;
-                 i++;
+                 i++;  // next
+                 // left-right eval
                  
                  continue;
               }
@@ -107,7 +110,7 @@
       | `else {`                      | `# end of block`          |
       | `for(; a <cond> b ;) {`       | `b<! cond> a, b, done`    |
       | `while(a <cond> b) {`         | `b<! cond> a, b, done`    |
-      | `continue;`                   | `b loop`                  |
+      | `continue;`                   | `b top`                   |
       | `// break;`                   | `b done`                  |
       | `break;`                      | `b done`                  |
       | `}`                           | `# end of block`          |

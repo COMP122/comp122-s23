@@ -171,37 +171,6 @@
   1. For-loop and while-loop statements:  (Same thing in Java)
      - deferred till next week
 
-     - Simple Example
-
-     ```java
-     for( i=0; i < top ; i++) {
-      
-      
-     }
-     ```
-
-     ```java TAC
-     init:    ;
-              i=0;
-     loop:    for(; i<top; ) {
-     body:       ;          
-                 body;
-     
-     next:       ;
-                 i++;
-                 
-                 continue;
-              }
-     done:    ; 
-     ```
-
-     - On the fly examples:
-       1. ASCII Encode Table
-       1. print CLI arguments
-       1. count down
-       1. summation
-
-
 ---
 ## Resources
 
