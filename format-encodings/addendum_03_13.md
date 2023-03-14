@@ -187,14 +187,68 @@
 ### Summation
   1. Java Code
   ```java
+
+  summantion:  ;
+  
+  int sum = 0;
+
+  for (int i = 1; i < $a0; i++ ) {
+    sum += i;
+  }
+
+
   ```
 
   1. Java TAC
   ```java tac
+        int sum = 0;
+  init: ;
+        int i = 1
+        $l = i;
+        $r = $a0;
+
+  sam:  for(; $l < $r ;) {
+  body:   ;  
+          sum += i;
+  next:   ;
+          i++;
+          $l = i;
+          $r = $a0;
+          continue;
+        }
+  done: ;
+
+
   ```
 
-  1. MIPS
+  1. MIPS:  see ~/classes/comp122/mips/summation.s
   ```mips
+
+  # this code is a fail!
+
+  # bookkeeping
+  # t1: $a0
+  # t2: i
+  # t3: $l
+  # t4: $r
+  # t5: sum
+                                # int sum = 0;
+  init: nop                     # ;
+        li $t2, 1               # int i = 1
+        move $t3, $t2           # $l = i;
+        move $t1, $a0           # $r = $a0;
+
+  sam:  bge $t3, $t4, done      # for(; $l < $r ;) {
+  body:    nop                  #   ;  
+           add $t5, $t5, $t2    #   sum += i;
+  next:    nop                  #   ;
+           addi $t2, $t2, i     #   i++;
+           move $t3, $t2        #   $l = i;
+           move $t4, $t1        #   $r = $a0;
+        b same                  #   continue;
+                                # }
+  done: nop                     # ;
+
   ```
 
 ### Reduction

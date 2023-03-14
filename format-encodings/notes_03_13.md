@@ -131,6 +131,7 @@
      }
      ```
 
+
      ```java TAC
      init:    ;
               i=0;        // init
@@ -172,35 +173,10 @@
               move $t1, $t0         # $l = i;     // left-right eval
               move $t2, $t3         # $r = limit;
  
-           b loop             #    continue;
+           b loop                #    continue;
                                  # }
     done:     nop                # ; 
     ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
