@@ -49,16 +49,22 @@ EOF
 #
 # ENVIRONMENT_VARS
 #    The following environment variables affect the execution of mips_subroutine:
-#
-#    MARS_JAR:  The location of the Mars jar file
-#    MARS:      The base command to invoke the Mars 
+#    MARS:      The command to run MARS
+#    MARS_JAR:  The location of the MARS jar file
 ###########################################################################
 
-MARS=$(which mars)
 
-if [[ -z ${MARS} ]] ; then
-  echo "MARS (MIPS Assembler and Runtime System) not found!"
-  exit 2
+if [[ -z "${MARS}" ]] ; then
+  MARS="$(which mars)"
+fi
+
+if [[ -z "${MARS}" ]] ; then
+  if [[ -z "${MARS_JAR}" ]] ; then
+    echo "MARS (MIPS Assembler and Runtime System) not found!"
+    exit 2
+  else
+    MARS="java - ${MARS_JAR}"
+  fi
 fi
 
 
@@ -66,6 +72,7 @@ fi
 # ENVIRONMENT VARABLE DESCRIPTONS
 
 SUB_NAME=""                # The name of the subroutine to be executed
+SUB_NAME_FILE=""
 SUB_CALL=""                # The actual subroutine call, e.g., sub(1, 2, 3)
 
 SUB_ARGS_TEXT=""           # A set of arrays to represent the text, type, and value
@@ -216,10 +223,12 @@ function build_data_segment () {
   echo "                .align 2"
   echo "argc:           .word  ${#SUB_ARGS_TEXT[@]}"
   echo -n "argv:           .word "
-  for ((i=0; i < ${#SUB_ARGS_TEXT[@]} -1; i++)) ; do
-      echo -n "arg_${i}, "
-  done
-  echo "arg_${i} "
+  if (( ${#SUB_ARGS_TEXT[@]} > 0 )) ; then 
+    for ((i=0; i < ${#SUB_ARGS_TEXT[@]} -1; i++)) ; do
+       echo -n "arg_${i}, "
+    done
+    echo "arg_${i} "
+  fi
   echo ""
 
   for ((i=0; i < ${#SUB_ARGS_TEXT[@]}; i++)) ; do
@@ -506,8 +515,8 @@ EOF
       ;;
 
     double)
-      echo "${SPACE15} # Print the double in \$f0"
-      echo "${SPACE15} # move \$a0, \$f0"
+      echo "${SPACE15} # Print the double in \$f12"
+      echo "${SPACE15} # mov.d \$f12, \$f0"  
       echo "${SPACE15} li \$v0, 3"
       echo "${SPACE15} syscall"
       ;;
@@ -612,8 +621,9 @@ function post_process () {
      exit 1
   fi
 
-# BUG
-#  pretty_print_output "${SUB_RETURN_LINE}"
+
+  #  Return value is a problem sometimes, this should be done conditionally
+  pretty_print_output "${SUB_RETURN_LINE}"
 
 
   # Perform the post processing
@@ -646,12 +656,11 @@ function post_process () {
   } >${ERROR_FILE}
 
 
-  # This always triggers:  BUG
-  # if (( SUMMARIZE == FALSE ||  
-  #       num_regs > num_system_regs  || 
-  #       $(wc -l < ${ERROR_FILE}) > 0 )) ; then 
-  #       echo  # "==========================================================="
-  # fi
+  if (( SUMMARIZE == TRUE ||  
+        num_regs > num_system_regs  || 
+        $(wc -l < ${ERROR_FILE}) > 0 )) ; then 
+        echo  # "==========================================================="
+  fi
 
   if [[ ${SUMMARIZE} == TRUE ]] ; then
     subroutine_summary
@@ -740,11 +749,29 @@ DUMP_REGISTERS="${DUMP_REG_LIST} ${DUMP_T_REGS} ${DUMP_V_REGS} ${DUMP_X_REGISTER
 eval "SUB_NAME=\${${OPTIND}}"
 shift ${OPTIND}
 
+
+# # Note that you must run the command in the current working directory of the files
+#
+SUB_NAME_FILE="${SUB_NAME}.s"
+SUB_NAME=$(basename ${SUB_NAME})
+
+# Command line related error checking
+[ $SUB_NAME != "main" ] || 
+     { echo "File name cannot be \"main.s\"." ; exit 1; }
+
+[ -f ${SUB_NAME_FILE} ] || 
+     { echo "File \"${SUB_NAME_FILE}\" does not exist." ; exit 1 ; }
+
+grep -q "${SUB_NAME}:" ${SUB_NAME_FILE}  || 
+     { echo "Subroutine $SUB_NAME not defined." ; exit 1; }
+
+
+
 SUB_ARGS_TEXT=( "$@" )
 
 
 # Determine the text, value, and type of each subroutine
-# arguments, and convert the string to the appropriate value
+# argument, and convert the string to the appropriate value
 for ((i=0; i < ${#SUB_ARGS_TEXT[@]}; i++)) ; do
   _type="string"
   _value=${SUB_ARGS_TEXT[$i]}
@@ -797,14 +824,6 @@ SUB_CALL=$(sub_routine_call)
 
 
 
-# Command line related error checking
-[ -f ${SUB_NAME}.s ] || 
-     { echo "File ${SUB_NAME}.s does not exist." ; exit 1 ; }
-[ $SUB_NAME != "main" ] || 
-     { echo "File name cannot be \"main.s\"." ; exit 1; }
-grep -q "${SUB_NAME}:" ${SUB_NAME}.s  || 
-     { echo "Subroutine $SUB_NAME not defined." ; exit 1; }
-
 
 # MARS is the execution hog... 
 # No value in checking for assembly before building the boot file
@@ -821,8 +840,8 @@ build_boot_file
 #  1. Execute Mars with boot file
 #  ae1 is needed in the case there is a linkage error.
 #  10000 is the max number of instructions to execute to prevent infinite loops
-${MARS} 10000 nc sm ae2 se1 p ${DUMP_REGISTERS} \
-     ${BOOT_FILE} ${SUB_NAME}.s > ${OUTPUT_FILE} 2>/dev/null
+${MARS} 10000 nc sm ae2 se1  ${DUMP_REGISTERS} \
+     ${BOOT_FILE} ${SUB_NAME_FILE} > ${OUTPUT_FILE} 2>/dev/null
 if [[ $? == 2 ]] ; then 
    sed "s|$PWD/||" ${OUTPUT_FILE}
    exit 1; 
