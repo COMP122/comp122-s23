@@ -251,17 +251,79 @@
 
   ```
 
-### Reduction
+### Factorial: n! == 1 * 2 * 3 * ... * n
   1. Java Code
   ```java
+  // factorial(int $a0)
+  int f = 1;
+  int factorial=0;  // my return
+
+  for(int index = 1; index <= $a0; index++) {
+     f = f * index;
+  }
+
+  factorial = f;
+
+
   ```
 
   1. Java TAC
   ```java tac
+              int f = 1;
+              int factorial=0;  // my return
+
+     init:    ;
+              int index = 1
+              $l = index;
+              $r = $a0;
+     bob:     for(; $l <= $r ;) {
+     body:       f = f * index;
+     next:       ;
+                 index++;
+                 $l = index;
+                 $r = $a0;
+                 continue;
+              }
+     mary:    ;
+
+              factorial = f;
   ```
 
-  1. MIPS
+  1. MIPS: untested.
+  
   ```mips
+     # bookkeeping 
+     # t0 : $a0
+     # t1 : $l
+     # t2 : $r
+     # t3 : factorial
+     # t4 : index
+     # t5 : f
+
+     factorial: 
+             # Demarshall my inputs
+             move $t0, $a0
+             
+             li $t5, 1            # int f = 1;
+             li $t3, 0            # int factorial=0;  // my return
+
+     init:   nop                  # ;
+             li $t4, 1            # int index = 1
+             move $t1, $t4        # $l = index;
+             move $t2, $t0        # $r = $a0;
+     bob:    bgt $t1, $t2, mary   # for(; $l <= $r ;) {
+     body:   mul $t5, $t5, $t4    #    f = f * index;
+
+     next:   nop                  #    ;
+             addi $t4, $t4, 1     #    index++;
+             move $t1, $t4        # $l = index;
+             move $t2, $t0        # $r = $a0;
+
+             b loop               #    continue;
+                                  # }
+     mary:                        # ;
+
+                                  # factorial = f;
   ```
 
 

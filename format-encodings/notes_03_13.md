@@ -137,7 +137,7 @@
               i=0;        // init
               $l = i;     // left-right eval
               $r = limit;
-     loop:    for(; $l < $r ; ) {
+     loop:    for(; $l < $r ;) {
      body:       ;          
                  // body;
      
@@ -184,7 +184,7 @@
        1. ASCII Encode Table
        1. Count down
        1. Summation
-       1. Reduction
+       1. Factorial
 
 
 ---
