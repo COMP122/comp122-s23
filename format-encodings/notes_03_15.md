@@ -68,9 +68,7 @@
    1. MIPS Declaration of a String
       ```mips
              .data
-      A:     .ascii "A "
-             .word 0
-      B:     .asciiz "string!"
+      A:     .ascii "A string!"
 
              .text
       ```
@@ -144,36 +142,6 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
-                # t0  : i
-                # t1  : $l
-                # t2  : $r 
-                # t3  : p, 
-                # t4  : &A
-
-      init:     nop                       # ;
-                li $t0, 0                 # i=0;
-                la $t3, A                 # $l = A[i];
-                add $t3, $t3, $t0
-                lbu $t1, 0($t3)
-
-
-                li $t2, '\0'              # $r = '\0';
-      loop:     beq $t1, $t2, done        # for(; $l != $r ;) {
-      body:       nop                     #   ;
-      next:       addi $t0, $t0, 1        #   i++;
-                                    
-                  la $t3, A               # $l = A[i];
-                  add $t3, $t3, $t0
-                  lbu $t1, 0($t3)
-
-                  li $t2, '\0'            #   $r = '\0';
-
-                b loop                    #   continue;
-                                          # }
-      done:     no                        # ;          
-                                          #    
-                move $v0, $t0             # return i;     // defer till later
-                jr $ra
       ```
 
 
@@ -183,96 +151,12 @@
      - Description: locate a char in a string
 
   ```java
-     for(i=0; A[i]!=\0; i++){
-          if (A[i] == c) {
-            break;
-        }
-     }
-     return i;
-
   ```
 
   ```java TAC
-        init:    ;
-               i=0;
-               $l = A[i];
-               $r = '\0';
-      loop:    for(; $l != $r ;) {
-      body:      ;
-
-                 $l = A[i];
-                 $r = c;
-                 if (A[i] == c) {
-      cons:        ;
-                   break loop;
-                   // break
-                 } else {
-      alt:         ;
-                   //break;
-                 }
-
-      next:      i++;
-                 $l = A[i];
-                 $r = '\0';
-
-                 continue loop;
-               }
-      done:    ;          
-                  
-               return i;     // defer till later
-      ```
+  ```
 
   ```mips
-
-                # t0  : i
-                # t1  : $l
-                # t2  : $r 
-                # t3  : p, 
-                # t4  : &A
-                # t5  : $ll
-                # t6  : $rr
-
-      init:     nop                       # ;
-                li $t0, 0                 # i=0;
-                la $t3, A                 # $l = A[i];
-                add $t3, $t3, $t0
-                lbu $t1, 0($t3)
-
-
-                li $t2, '\0'              # $r = '\0';
-      loop:     beq $t1, $t2, done        # for(; $l != $r ;) {
-      body:       nop                     #   ;
-
-      init_if:                            # $ll = A[i];
-                                          # $rr = c;
-
-      test:                               # if (A[i] == c) {
-      cons:                               #    ;
-                                          #    break loop;
-                                          #    // break
-                                          #  } else {
-      alt:                                #    ;
-                                          #    //break;
-                                          #  }
-      done_if:                            #  ;
-
-
-      next:       addi $t0, $t0, 1        #   i++;
-                                    
-                  la $t3, A               # $l = A[i];
-                  add $t3, $t3, $t0
-                  lbu $t1, 0($t3)
-
-                  li $t2, '\0'            #   $r = '\0';
-
-                b loop                    #   continue;
-                                          # }
-      done:     no                        # ;          
-                                          #    
-                move $v0, $t0             # return i;     // defer till later
-                jr $ra
- 
-
   ```
 
 
