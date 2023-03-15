@@ -13,9 +13,9 @@
 str:            .asciiz "Hello World\n" # H,e,l,l,o, ,W,o,r,l,d,\n,\0
 
                 .text
-                .globl main
+                .globl hello_world
 
-main:           nop
+hello_world:    nop
                 la $a0, str     # load the lval (i.e., the address) into a0
                 li $v0, 4       # Service #4: print string
                 syscall         

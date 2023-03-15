@@ -17,9 +17,9 @@
 num:            .space 4        # space for a integer number
         
                 .text
-                .globl main
+                .globl echo_int
         
-main:           nop             
+echo_int:       nop             
                 li $v0, 5       # Service #5: read decimal
                 syscall         
                 nop             # The register v0 holds the value just read

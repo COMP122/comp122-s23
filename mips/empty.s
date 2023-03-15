@@ -15,10 +15,10 @@
                 .text           
                 # insert your code declarations
         
-                .globl main     
+                .globl empty     
                 # define your default starting routine
         
-main:           nop             # label for the main subroutine
+empty:          nop             # label for the main subroutine
         
         
         

@@ -23,7 +23,7 @@ summantion:
         move $t3, $t2           # $l = i;
         move $t4, $a0           # $r = $a0;
 
-  sam:  bge $t3, $t4, done      # for(; $l < $r ;) {
+  sam:  bgt $t3, $t4, done      # for(; $l < $r ;) {
   body:    nop                  #   ;  
            add $t5, $t5, $t2    #   sum += i;
   next:    nop                  #   ;
