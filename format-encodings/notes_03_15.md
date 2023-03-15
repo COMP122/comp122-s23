@@ -21,18 +21,19 @@
 ## Review from Last-time:
 
   1. For-loop Transformation --> Java TAC (Recall)
-     1. Explicity dentify with labels the parts of the loop
-        - init, loop, body, next, done
+     1. Explicity dientify with labels the section of the loop
+        - init, loop(test), body, next, done
      1. Move the init arm to the init block
      1. Move the next arm to the next block
-     1. Simplify the condition into three parts
-        - $l: that evaluates the left-side of the condition
-        - $r: that evaluates the righ-side of the condition
+     1. Simplify the boolean expression into three parts
+        - evaluate the left-hand side into $l
+        - evaluate the righ-hand side into $r
         - the test:    `loop: for(;  $l <cond> $r ;)`
-     1. Copy the evaluation of both $l and $l to 
-        - the bottom of the init block
-        - the bottom of the next block
-     1. Add the explicit `continue;` to the bottomthe next block 
+     1. Place a copy of the lhs and rhs equations
+        - at the end of the init block
+        - at the end of the next block
+     1. Add the explicit `continue;` to the bottom of the next block 
+
 
   1. Java TAC transliteration into MIPS
      - Copy your Java TAC into your MIPS file
