@@ -21,7 +21,7 @@
 ## Review from Last-time:
 
   1. For-loop Transformation --> Java TAC (Recall)
-     1. Explicity dientify with labels the section of the loop
+     1. Explicity identify with labels the section of the loop
         - init, loop(test), body, next, done
      1. Move the init arm to the init block
      1. Move the next arm to the next block
@@ -68,7 +68,9 @@
    1. MIPS Declaration of a String
       ```mips
              .data
-      A:     .asciiz "A "string!"
+      A:     .ascii "A "
+             .word 0
+      B:     .asciiz "string!"
 
              .text
       ```
@@ -134,7 +136,7 @@
    |                               | `add p, p, v`             |
    |                               | `sb x, 0(p)`              |
    |                               |                           |
-   | `x = & A;`                    | `la x, A`                 |
+   | `x = & A;`                    | `la p, A`                 |
    | `x = (* p);`                  | `lbu x, 0(p)`             |
    | `(* p) = x;`                  | `sb x, 0(p)`              |
 
@@ -142,6 +144,36 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
+                # t0  : i
+                # t1  : $l
+                # t2  : $r 
+                # t3  : p, 
+                # t4  : &A
+
+      init:     nop                       # ;
+                li $t0, 0                 # i=0;
+                la $t3, A                 # $l = A[i];
+                add $t3, $t3, $t0
+                lbu $t1, 0($t3)
+
+
+                li $t2, '\0'              # $r = '\0';
+      loop:     beq $t1, $t2, done        # for(; $l != $r ;) {
+      body:       nop                     #   ;
+      next:       addi $t0, $t0, 1        #   i++;
+                                    
+                  la $t3, A               # $l = A[i];
+                  add $t3, $t3, $t0
+                  lbu $t1, 0($t3)
+
+                  li $t2, '\0'            #   $r = '\0';
+
+                b loop                    #   continue;
+                                          # }
+      done:     no                        # ;          
+                                          #    
+                move $v0, $t0             # return i;     // defer till later
+                jr $ra
       ```
 
 
@@ -151,12 +183,95 @@
      - Description: locate a char in a string
 
   ```java
+     for(i=0; A[i]!=\0; i++){
+          if (A[i] == c) {
+            break;
+        }
+     }
+     return i;
+
   ```
 
   ```java TAC
-  ```
+        init:    ;
+               i=0;
+               $l = A[i];
+               $r = '\0';
+      loop:    for(; $l != $r ;) {
+      body:      ;
+
+                 $l = A[i];
+                 $r = c;
+                 if (A[i] == c) {
+      cons:        ;
+                   break loop;
+                   // break
+                 } else {
+      alt:         ;
+                   //break;
+                 }
+
+      next:      i++;
+                 $l = A[i];
+                 $r = '\0';
+
+                 continue loop;
+               }
+      done:    ;          
+                  
+               return i;     // defer till later
+      ```
 
   ```mips
+
+                # t0  : i
+                # t1  : $l
+                # t2  : $r 
+                # t3  : p, 
+                # t4  : &A
+                # t5  : $ll
+                # t6  : $rr
+
+      init:     nop                       # ;
+                li $t0, 0                 # i=0;
+                la $t3, A                 # $l = A[i];
+                add $t3, $t3, $t0
+                lbu $t1, 0($t3)
+
+
+                li $t2, '\0'              # $r = '\0';
+      loop:     beq $t1, $t2, done        # for(; $l != $r ;) {
+      body:       nop                     #   ;
+
+                                          # $ll = A[i];
+                                          # $rr = c;
+
+                                          # if (A[i] == c) {
+      cons:                               #    ;
+                                          #    break loop;
+                                          #    // break
+                                          #  } else {
+      alt:                                #    ;
+                                          #    //break;
+                                          #  }
+
+
+      next:       addi $t0, $t0, 1        #   i++;
+                                    
+                  la $t3, A               # $l = A[i];
+                  add $t3, $t3, $t0
+                  lbu $t1, 0($t3)
+
+                  li $t2, '\0'            #   $r = '\0';
+
+                b loop                    #   continue;
+                                          # }
+      done:     no                        # ;          
+                                          #    
+                move $v0, $t0             # return i;     // defer till later
+                jr $ra
+ 
+
   ```
 
 
@@ -177,6 +292,8 @@
       |-------------------------------|---------------------------|
       | `;`                           | `nop`                     |
       | `x = imm;`                    | `li x, imm`               |
+      | `x = - imm`                   | `subi x, $zero, imm`      |
+      | `x = - a`                     | `sub  x, $zero, a`        |
       | `x = a;`                      | `move x, a`               |
       | `x = a <op_i> imm; `          | `<op_i> x, a, imm`        |
       | `x = a <op> b;`               | `<op> x, a, b`            |
