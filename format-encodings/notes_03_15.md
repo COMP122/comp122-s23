@@ -68,13 +68,15 @@
    1. MIPS Declaration of a String
       ```mips
              .data
-      A      .asciiz "A string!"
+      A:     .asciiz "A "string!"
 
              .text
       ```
 
    1. Java: A.length  versus  C: strlen()
       - man strlen
+      - man -k string | grep ^str
+
       ```java
 
       for(i=0; A[i]!='\0'; i++);
@@ -130,7 +132,7 @@
    |                               |                           |
    | `A[v] = x;`                   | `la p, A`                 |
    |                               | `add p, p, v`             |
-   |                               | `sb x, 0(a)`              |
+   |                               | `sb x, 0(p)`              |
    |                               |                           |
    | `x = & A;`                    | `la x, A`                 |
    | `x = (* p);`                  | `lbu x, 0(p)`             |
@@ -140,23 +142,40 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
-      init:                         # ;
-                                    # i=0;
-                                    # $l = A[i];
+             .data
+      A:     .asciiz "A "string!"
 
+             .text
 
-                                    # $r = '\0';
-      loop:                         # for(; $l != $r ;) {
-      body:                         #   ;
-      next:                         #   i++;
-                                    #   $l = A[i];
+             # $t0: i
+             # $t1: $r
+             # $t2: $l
+             # $t3: A
+             #
 
-                                    #   $r = '\0';
+      init:   nop                   # ;
+              li $t0, 0             # i=0;
+              la $t3, A             # $l = A[i];
+              add $t3, $t3, $t0
+              lbu $t2, 0($t3)
 
-                                    #   continue;
+              li $t1, '\0'          # $r = '\0';
+      loop:   beq $t2, $t1, done    # for(; $l != $r ;) {
+      body:     nop                 #   ;
+      next:     addi $t0, $t0, 1    #   i++;
+ 
+                la $t3, A           # $l = A[i];
+                add $t3, $t3, $t0
+                lbu $t2, 0($t3)
+
+ 
+                li $t1, '\0'        #   $r = '\0';
+
+              b loop                #   continue;
                                     # }
-      done:                         # ;          
-                  
+      done:   nop                   # ;          
+               
+              move $v0, $t0         # return i;     // defer till later   
       ```
 
 
