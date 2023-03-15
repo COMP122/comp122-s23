@@ -97,7 +97,7 @@
                }
       done:    ;          
                   
-
+               return i;     // defer till later
       ```
 
    1. Array Indexing
@@ -120,16 +120,18 @@
    |-------------------------------|---------------------------|
    | `x = A[imm];`                 | `la p, A`                 |
    |                               | `lbu x, imm(p)`           |
+   |                               |                           |
    | `x = A[v];`                   | `la p, A`                 |
    |                               | `add p, p, v`             |
    |                               | `lbu x, 0(p)`             |
    |                               |                           |
    | `A[imm] = x;`                 | `la p, A`                 |
    |                               | `sb x, imm(p)`            |
-   | `A[v] = x;`                   | `la p, A`                 |
    |                               |                           |
+   | `A[v] = x;`                   | `la p, A`                 |
    |                               | `add p, p, v`             |
    |                               | `sb x, 0(a)`              |
+   |                               |                           |
    | `x = & A;`                    | `la x, A`                 |
    | `x = (* p);`                  | `lbu x, 0(p)`             |
    | `(* p) = x;`                  | `sb x, 0(p)`              |
@@ -166,7 +168,7 @@
   ```java
   ```
 
-  ```java
+  ```java TAC
   ```
 
   ```mips
@@ -207,16 +209,19 @@
       |-------------------------------|---------------------------|
       | `x = A[imm];`                 | `la p, A`                 |
       |                               | `lb x, imm(p)`            |
+      |                               |                           |
       | `x = A[v];`                   | `la p, A`                 |
       |                               | `add p, p, v`             |
       |                               | `lb x, 0(p)`              |
       |                               |                           |
       | `A[imm] = x;`                 | `la p, A`                 |
       |                               | `sb x, imm(p)`            |
+      |                               |                           |
       | `A[v] = x;`                   | `la p, A`                 |
       |                               |                           |
       |                               | `add p, p, v`             |
       |                               | `sb x, 0(a)`              |
+      |                               |                           |
       | `x = & A;`                    | `la x, A`                 |
       | `x = (* p);`                  | `lb x, 0(p)`              |
       | `(* p) = x;`                  | `sb x, 0(p)`              |
