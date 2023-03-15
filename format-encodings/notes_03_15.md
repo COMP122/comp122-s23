@@ -243,10 +243,10 @@
       loop:     beq $t1, $t2, done        # for(; $l != $r ;) {
       body:       nop                     #   ;
 
-                                          # $ll = A[i];
+      init_if:                            # $ll = A[i];
                                           # $rr = c;
 
-                                          # if (A[i] == c) {
+      test:                               # if (A[i] == c) {
       cons:                               #    ;
                                           #    break loop;
                                           #    // break
@@ -254,6 +254,7 @@
       alt:                                #    ;
                                           #    //break;
                                           #  }
+      done_if:                            #  ;
 
 
       next:       addi $t0, $t0, 1        #   i++;
