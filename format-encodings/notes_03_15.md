@@ -142,40 +142,6 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
-             .data
-      A:     .asciiz "A "string!"
-
-             .text
-
-             # $t0: i
-             # $t1: $r
-             # $t2: $l
-             # $t3: A
-             #
-
-      init:   nop                   # ;
-              li $t0, 0             # i=0;
-              la $t3, A             # $l = A[i];
-              add $t3, $t3, $t0
-              lbu $t2, 0($t3)
-
-              li $t1, '\0'          # $r = '\0';
-      loop:   beq $t2, $t1, done    # for(; $l != $r ;) {
-      body:     nop                 #   ;
-      next:     addi $t0, $t0, 1    #   i++;
- 
-                la $t3, A           # $l = A[i];
-                add $t3, $t3, $t0
-                lbu $t2, 0($t3)
-
- 
-                li $t1, '\0'        #   $r = '\0';
-
-              b loop                #   continue;
-                                    # }
-      done:   nop                   # ;          
-               
-              move $v0, $t0         # return i;     // defer till later   
       ```
 
 
@@ -185,102 +151,17 @@
      - Description: locate a char in a string
 
   ```java
-
-      for(i=0; A[i]!='\0'; i++) {
-        if (A[i] == c) {
-
-          break;
-        }
-      }
-
-      return &(A[i]);
-
   ```
 
   ```java TAC
-init:     ;
-          i = 0;
-          $l = A[i];
-          $r = '\0';
- 
-test:     for(; $l != $r ;) {
-             $ll = A[i];
-             $rr = c;
-             if ($ll == $rr) {
-cons:          ; 
-               break test;
-             } else {
-alt:           ;
-             }
-if_done:     ; 
-
-next:     ;
-          i++;
-          $l = A[i];
-          $r = '\0';
-          continue;
-          }
-done:     ; 
-
   ```
 
   ```mips
-               .data
-      A:     .asciiz "A "string!"
-
-             .text
-
-             # $t0: i
-             # $t1: $r
-             # $t2: $l
-             # $t3: A
-             #
-
-      init:   nop                   # ;
-              li $t0, 0             # i=0;
-              la $t3, A             # $l = A[i];
-              add $t3, $t3, $t0
-              lbu $t2, 0($t3)
-
-              li $t1, '\0'          # $r = '\0';
-      loop:   beq $t2, $t1, done    # for(; $l != $r ;) {
-      body:     nop                 #   ;
-
-                                    #   $ll = A[i];
-                                    #   $rr = c;
-                                    #   if ($ll == $rr) {
-cons:                               #     ; 
-                                    #     break test;
-                                    #   } else {
-alt:                                #     ;
-                                    #   }
-if_done:                            #   ; 
-
-
-
-
-
-      next:     addi $t0, $t0, 1    #   i++;
- 
-                la $t3, A           # $l = A[i];
-                add $t3, $t3, $t0
-                lbu $t2, 0($t3)
-
- 
-                li $t1, '\0'        #   $r = '\0';
-
-              b loop                #   continue;
-                                    # }
-      done:   nop                   # ;          
-               
-              move $v0, $t0         # return i;     // defer till later   
-      ```
-
   ```
 
 
 
- 
+
 ---
 ## Resources
 
