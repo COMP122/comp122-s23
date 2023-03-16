@@ -6,6 +6,7 @@
       - 43-binary32: 
         * late submissions until Thursday Mar 23:59:59
 
+
 ## Today's Agenda:
 
    1. Strings and For-loops
@@ -67,7 +68,7 @@
    1. MIPS Declaration of a String
       ```mips
              .data
-      A:     .ascii  "A string!"
+      A:     .ascii "A string!"
 
              .text
       ```
@@ -141,35 +142,6 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
-               # t0 :  i      
-               # t1 :  A
-               # t2 :  p
-               # t3 :  $l
-               # t4 :  $r
-
-
-
-      init:     nop                 # ;
-                li $t0, 0           # i=0;
-                la $t2, A           # $l = A[i];
-                add $t2, $t2, $t0
-                lbu $t3, 0($t2) 
-
-                li $t4, '\0'        # $r = '\0';
-      loop:     beq $t4, $t3, done  # for(; $l != $r ;) {
-      body:       nop               #   ;
-      next:       addii $t0, $t0, 1 #   i++;
-                  la $t2, A         # $l = A[i];
-                  add $t2, $t2, $t0
-                  lbu $t3, 0($t2) 
-
-                  li $t4, '\0       #   $r = '\0';
-
-               b loop               #   continue;
-                                    # }
-      done:    nop                  # ;          
-                                    #    
-                                    # return i;     // defer till later
       ```
 
 
@@ -179,104 +151,12 @@
      - Description: locate a char in a string
 
   ```java
-
-     for(i=0; A[i]!='\0'; i++){
-
-       if (A[i] == c) {
-         break;
-       }
-
-     }
-
-
-      // return i;
-
   ```
 
   ```java TAC
-   init:    ;
-            i=0;
-            $l = A[i];
-            $r = '\0';
-
-   bob:     for(; $l != $r; i++){
-   body:      ;
-              #-----------------
-              $ll = A[i];
-              $rr = c;
-              if ($ll == $rr) {
-                break bob;
-                // break 
-              } else {
-                ;
-                // break
-              }
-              #-----------------
-   next:      ;
-              i++;
-              $l = A[i];
-              $r = '\0';
-              continue bob;
-            }
-   done:    ;
   ```
 
   ```mips
-               # a0 :  c
-               # t0 :  i      
-               # t1 :  A
-               # t2 :  p
-               # t3 :  $l
-               # t4 :  $r
-               # t5 : $ll
-               # t6 : $rr
-               # t7 : pp
-               # t8 : c
-
-               move $t8, $a0
-
-      init:     nop                 # ;
-                li $t0, 0           # i=0;
-                la $t2, A           # $l = A[i];
-                add $t2, $t2, $t0
-                lbu $t3, 0($t2) 
-
-                li $t4, '\0'        # $r = '\0';
-      bob:      beq $t4, $t3, done  # for(; $l != $r ;) {
-
-      body:       nop                #   ;
-                  la $t7, A          #  $ll = A[i];
-                  add $t7, $t7, $t0
-                  lbu $t5, 0($t7)
-
-                  move $t6, $t8             #  $rr = c;
-                  bne $t5, $t6, alt         #  if ($ll == $rr) {
-     cons:          nop                     #    ;
-                    b done                  #    break bob;
-                    b if_done               #    // break 
-                                            #  } else {
-     alt:           nop                     #    ;
-                    b if_done               #    // break
-                                            #  }
-     if_done:       nop                     #  ;
-
-
-      next:       addii $t0, $t0, 1 #   i++;
-                  la $t2, A         # $l = A[i];
-                  add $t2, $t2, $t0
-                  lbu $t3, 0($t2) 
-
-                  li $t4, '\0       #   $r = '\0';
-
-               b loop               #   continue;
-                                    # }
-      done:    nop                  # ;          
-                                    #    
-                                    # return i;     // defer till later
-      ```
-
-
-
   ```
 
 
