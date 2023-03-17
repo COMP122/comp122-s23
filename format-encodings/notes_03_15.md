@@ -68,8 +68,9 @@
    1. MIPS Declaration of a String
       ```mips
              .data
-      A:     .ascii "A string!"
-
+      A:     .ascii "A str
+      B:     .ascii "ing!"
+             .asciiz "\n"
              .text
       ```
 
@@ -80,6 +81,7 @@
       ```java
 
       for(i=0; A[i]!='\0'; i++);
+      
       return i;
 
       ```
@@ -134,7 +136,7 @@
    |                               | `add p, p, v`             |
    |                               | `sb x, 0(p)`              |
    |                               |                           |
-   | `x = & A;`                    | `la p, A`                 |
+   | `p = & A;`                    | `la p, A`                 |
    | `x = (* p);`                  | `lbu x, 0(p)`             |
    | `(* p) = x;`                  | `sb x, 0(p)`              |
 
@@ -142,6 +144,36 @@
    1. Java: A.length, C: strlen(), MIPS: strlen()
 
       ```mips
+      # t4 : i
+      # t3 : A
+      # t2 : p
+      # t1 : $l
+      # t0 : $r
+
+
+
+      init:     nop                          # ;
+                li $t4, 0                    # i=0;
+                la $t2, A                  #   $l = A[i];
+                add $t2, $t2, $t4
+                lbu $t1, 0($t2)
+
+                li $t0, '\0'                 # $r = '\0';
+      loop:     beq $t1, $t0, done           # for(; $l != $r ;) {
+      body:       nop                        #   ;
+      next:       addi $t4, $t4, 1           #   i++;
+                  la $t2, A                  #   $l = A[i];
+                  add $t2, $t2, $t4
+                  lbu $t1, 0($t2)
+
+
+                  li $t0, '\0'               #   $r = '\0';
+
+                b loop                       #   continue;
+                                             # }
+      done:     nop                          # ;          
+                  
+               return i;     // defer till later
       ```
 
 
@@ -151,12 +183,97 @@
      - Description: locate a char in a string
 
   ```java
+     match:  for(i=0; A[i]!='\0'; i++) {
+               if (A[i] == c) {
+                 break match;
+               }
+             }
+
   ```
 
   ```java TAC
+       init:    ;
+               i=0;
+               $l = A[i];
+               $r = '\0';
+      match:   for(; $l != $r ;) {
+      body:      ;
+                 $ll = A[i];
+                 $rr  = c;
+                 if ($ll == $rr) {
+      cons:        ;
+                   break match;
+                   // break;
+                 } else {
+      alt:          ;
+                    //break;
+                 }
+      done_if:   ;
+
+
+      next:      i++;
+                 $l = A[i];
+                 $r = '\0';
+
+                 continue;
+               }
+      done:    ;          
+                  
+
   ```
 
   ```mips
+       # t4 : i
+      # t3 : A
+      # t2 : p
+      # t1 : $l
+      # t0 : $r
+      # t7 : pp
+      # t8 : $ll
+      # t9 : $rr
+
+
+
+      init:     nop                          # ;
+                li $t4, 0                    # i=0;
+                la $t2, A                  #   $l = A[i];
+                add $t2, $t2, $t4
+                lbu $t1, 0($t2)
+
+                li $t0, '\0'                 # $r = '\0';
+      match:    beq $t1, $t0, done           # for(; $l != $r ;) {
+      body:       nop                        #   ;
+                                             
+
+                la $t7, A                    # $ll = A[i];
+                add $t7, $t7, $t4
+                lbu $t8, 0($t7)
+                li $t9, '\0'                 # $rr  = c;
+                bne $t8, $t9, alt            # if ($ll == $rr) {
+      cons:     nop                          #   ;
+                b done                       #   break match;
+                b done_if                    #   // break;
+                                             # } else {
+      alt:      nop                          #    ;
+                b done_if                    #    //break;
+                                             # }
+      done_if:  nop                          # ;
+
+
+      next:       addi $t4, $t4, 1           #   i++;
+                  la $t2, A                  #   $l = A[i];
+                  add $t2, $t2, $t4
+                  lbu $t1, 0($t2)
+
+
+                  li $t0, '\0'               #   $r = '\0';
+
+                b loop                       #   continue;
+                                             # }
+      done:     nop                          # ;          
+                  
+
+
   ```
 
 

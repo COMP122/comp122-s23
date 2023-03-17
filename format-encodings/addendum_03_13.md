@@ -319,11 +319,11 @@
              move $t1, $t4        # $l = index;
              move $t2, $t0        # $r = $a0;
 
-             b loop               #    continue;
+             b bob                #    continue;
                                   # }
      mary:                        # ;
 
-                                  # factorial = f;
+             move $t3, $t5       # factorial = f;
   ```
 
 
