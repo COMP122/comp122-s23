@@ -93,19 +93,19 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Status: Graded
    - Deliverable ID: 21
    - Invitation URL: https://classroom.github.com/a/syiQChvY
-   - Due Date: March 2 23:59
+   - Due Date: Mar 2 23:59
 
 1. Name: UTF-8 Encoding
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 22
    - Invitation URL: https://classroom.github.com/a/a0psIcuu
-   - Due Date: March 5 23:59
+   - Due Date: Mar 5 23:59
  
  1. Name: Base Conversion and Floating Point Representation
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 23
    - Invitation URL: https://classroom.github.com/a/gz_mKhjN
-   - Due Date: March 12 23:59:59
+   - Due Date: Mar 12 23:59:59
    
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
@@ -132,15 +132,15 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Deliverable ID: 42
    - Invitation URL: https://classroom.github.com/a/Ijqpjvtl
    - Due Dates: 
-     - Accept Assignment: March 7 23:59:59
-     - Final Submission: March 9 23:59:59
+     - Accept Assignment: Mar 7 23:59:59
+     - Final Submission: Mar 9 23:59:59
      
 
 1. Name: binary32 Encoding
    - Status: Released,
    - Deliverable ID: 43
    - Invitation URL: https://classroom.github.com/a/L_lMxoNI
-   - Due Date: March 12 23:59
+   - Due Date: Mar 12 23:59
      
 1. Name: 
    - Status: 
