@@ -623,7 +623,7 @@ function post_process () {
 
 
   #  Return value is a problem sometimes, this should be done conditionally
-  # pretty_print_output "${SUB_RETURN_LINE}"
+  pretty_print_output "${SUB_RETURN_LINE}"
 
 
   # Perform the post processing
