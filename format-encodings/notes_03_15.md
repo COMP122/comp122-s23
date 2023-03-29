@@ -4,7 +4,7 @@
    1. Assignments: 
       - Spring break next week
       - 43-binary32: 
-        * late submissions until Thursday Mar 23:59:59
+        * late submissions until Thursday Mar 16 23:59:59
 
 
 ## Today's Agenda:
@@ -362,7 +362,7 @@
       | `mips.print_ci(imm);`         | `print_ci(imm)`           |
       |  See printf:                  | etc., etc., etc.,         |
 
-  1. ![String Processing](https://docs.google.com/presentation/d/1fg9BuWtyZ9PARK0gDE5ZcbjOiudRSrVP2s1iuSIDYXw/edit#slide=id.g199d0a137fe_0_29)
+  1. [String Processing](https://docs.google.com/presentation/d/1fg9BuWtyZ9PARK0gDE5ZcbjOiudRSrVP2s1iuSIDYXw/edit#slide=id.g199d0a137fe_0_29)
   
 ---
 ## Notes
