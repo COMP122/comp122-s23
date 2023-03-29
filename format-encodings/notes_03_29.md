@@ -15,7 +15,7 @@
     
    2. Conversion between Powers of 2
 
-   1. Conversion Practicum: 
+   1. Convergence Practicum: 
 
 
 ## Questions from Last Lecture/Lab, etc.:

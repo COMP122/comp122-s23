@@ -28,6 +28,7 @@
      - Tuesday @ 11:30-12:20 & Thursday @ 12:00-12:50 -- with prior notification.
      - Zoom Link: https://csun.zoom.us/my/smf.steve
 
+
 #### Class Information: COMP122/L-02 (16204/16205)
 * Meeting Times: Monday & Wednesday @ 9:00-9:25 AM & 9:30-10:45 AM
 * Meeting Location: JD2216 
@@ -130,6 +131,11 @@ The table below provides the objective measures used to calculate a student's fi
 
 Regardless of the structure used to assign a quantitative number to each student, it is the Professor's goal to assign a final quantitative number that is closely aligned with the student's qualitative understanding of the course content. Your *active* participation in this class is central to demonstrating course knowledge.
 
+## Common Excuses:
+   1. The dog ate my homework
+   1. My pencil broke
+   1. I left it at home
+   1. My computer broke.
 
 ## Teamwork and Collaborative Learning
 I encourage everyone to work in teams, to engage in collaborative learning activities, and to discuss course material with your colleagues. The slack channel exists for class discussions.  I monitor the discussions to determine what information needs additional coverage in class, to correct any misinformation, and to provide pointers. Moreover, the class discussions are part of your "Participation" score.  Hence, be an active participation in class discussions on slack.
