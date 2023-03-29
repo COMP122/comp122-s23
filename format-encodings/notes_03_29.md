@@ -19,7 +19,7 @@
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am: 
+   * M/W @ 9:00 am: none
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am:
    * T/R @ 2:00 pm:
@@ -49,7 +49,7 @@
      - BTDT: Been There, Done That
 
 
-  1. Conversion between Base 10 & Base b
+  1. Conversion between Base 10 <-> Base b
      1. Base b to Base 10
         - Use Expanded Notation to determine its value (v), or
         - For each digit d in the number, evaluate the equation
@@ -73,7 +73,7 @@
 
         - The concatenation of the remainders--in reverse--is the Base b number.
 
-   1. Algorithm: Base 10 to Base b
+   1. Algorithm: Base 10 to Base 2
 
       ```java
       n = number;
@@ -92,10 +92,10 @@
       for (count = 0; n != 0 ; count++ ){
         n = n / 2;
         r = n % 2;
-        push(r);
+        mips.push(r);
       }
       for ( ; count > 0; count-- ) {
-        d = pop();
+        d = mips.pop();
         mips.print_d(d);
       }
       ```
@@ -113,7 +113,7 @@
          n = 23;               // the fractional value
          while (n != 0 ) {
             n = n * 2
-            if ( n > max ) {
+            if ( n >= max ) {
                 mips.print_di(1);
                 n = n - max; 
             } else {
@@ -121,6 +121,7 @@
             }
          }
          ```
+         - the precision is set to the smallest power of 10 > the fractional part
 
       1. Put the pieces together:
          "100111010" '.' "0011101011100001010001111010111"
