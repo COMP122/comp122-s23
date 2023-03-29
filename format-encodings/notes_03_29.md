@@ -80,6 +80,18 @@
       for (count = 0; n != 0 ; count++ ){
         n = n / 2;
         r = n % 2;
+        mips.print_d(r);
+      }
+      mips.print_ci('\n');
+      ```
+
+
+
+      ```java
+      n = number;
+      for (count = 0; n != 0 ; count++ ){
+        n = n / 2;
+        r = n % 2;
         push(r);
       }
       for ( ; count > 0; count-- ) {
@@ -121,7 +133,7 @@
 
   1. [Real to Binary Conversion](https://docs.google.com/spreadsheets/d/1aMvlfw_rzvYBObT94dX8v_O0EgELHgWrmZgWKmoLY7s/edit#gid=1434558784)
 
-
+  1. 45-dec2bin:  https://classroom.github.com/a/U7-Zwn4k
 
 
 ---
