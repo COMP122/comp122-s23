@@ -20,9 +20,9 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: none
-   * M/W @ 2:00 pm: 
-   * T/R @ 9:00 am:
-   * T/R @ 2:00 pm:
+   * M/W @ 2:00 pm: none
+   * T/R @ 9:00 am: question on git push and computer restart
+   * T/R @ 2:00 pm: fractional part: meaning? can I slap them togther: whole + fractional?
 
 
 ## Review from Last-time:
@@ -60,9 +60,9 @@
             - v = 0 * b + base10(1)
 
           * number:  2# 101
-            - 1 = 0 * b + base10(1)
-            - 2 = 1 * b + base10(0)
-            - 5 = 2 * b + base10(1)
+            - 1 = 0 * 2 + 1
+            - 2 = 1 * 2 + 0
+            - 5 = 2 * 2 + 1
 
      1. Base 10 to Base b
         - Evaluate the following equation till it converges to zero
@@ -106,7 +106,7 @@
       1. Whole part:  
          - 314 --> 2# 100111010
          - See above
-      1. Fractional part: .23  --> . 0011101011100001010001111010111
+      1. Fractional part: .23 --> . 0011101011100001010001111010111
 
          ```java
          max = 100;            // The desired precision
@@ -135,6 +135,21 @@
   1. [Real to Binary Conversion](https://docs.google.com/spreadsheets/d/1aMvlfw_rzvYBObT94dX8v_O0EgELHgWrmZgWKmoLY7s/edit#gid=1434558784)
 
   1. 45-dec2bin:  https://classroom.github.com/a/U7-Zwn4k
+
+  1. I updated the MIPS OS Interface Class to include push and pop
+
+      | JAVA: MIPS OS Interface       | MIPS Macro                |
+      |-------------------------------|---------------------------|
+      | `mips.print_t(a);`            | `print_t(a)`              |
+      | `mips.print_ti(imm);`         | `print_ti(imm)`           |
+      | `mips.print_c(a);`            | `print_c(a)`              |
+      | `mips.print_ci(imm);`         | `print_ci(imm)`           |
+      |  See printf:                  | etc., etc., etc.,         |
+      |  `mips.push(a)`               | push(a)                   |
+      |  `x = mips.pop()`             | pop(x)                    |
+
+
+
 
 
 ---
