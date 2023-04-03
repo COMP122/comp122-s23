@@ -7,10 +7,10 @@
           - code was provided in previous class notes
           - more weight provided to Java, then to Java TAC, and then MIPS
 
-      - 44-dec2bin:
+      - 45-dec2bin:
           - graded (contents of repo as of Thursday Midnight): grade.report.05
           - transformed into 05-dec2bin.java
-          - i.e., transferred to Particiation credit
+          - i.e., transferred to Participation credit
 
    1. Tasks:
       - Accept the following assignments:
@@ -37,6 +37,8 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
+      - translation from TAC -> MIPS, how to do %
+      - some reports of 44-strlen not having grade.report
    * M/W @ 2:00 pm: 
    * T/R @ 9:00 am: 
    * T/R @ 2:00 pm: 
@@ -48,8 +50,9 @@
       ```java
       n = number;
       for (count = 0; n != 0 ; count++ ){
-        n = n / 2;
         r = n % 2;
+        n = n / 2;
+
         mips.push(r);
       }
       for ( ; count > 0; count-- ) {
@@ -121,6 +124,10 @@
   1. Base2: Encodings and Mathematical Operations: 
      - comp122/format-encodings/documents/base2-encoding-and-mathematical-operations.pdf
 
+  1. TAC for Mult & Div
+     - X = a * b;   div a, b;  mflo x
+     - X = a / b;
+     - x = a % b;
 
   1. Scaffolding for fractional2bin
 
