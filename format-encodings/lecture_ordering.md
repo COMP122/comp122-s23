@@ -17,29 +17,26 @@
 
   1. Bitwise Operations: bitwise-operations.pptx
 
-  
-  1. Mathematical Review & Base 2 Encodings
-     * Condensed the following into a single slide deck
-       1. Base10: Mathematical Review
-          * Addition
-          * BCD Addition
-          * Subtraction
-          * Method of Complements
-          * Subtraction via Complements
-          * Multiplication
-       
-       1. Base2: Encoding and Mathematical Operations
-          * Binary Addition
-          * Subtraction (Traditional Method)
-          * Method of Complements (2's and 1's Complement)
-            - Encoding of Negative Numbers
-          * Subtraction via Complements
-          * Binary Multiplication
-  
-  1. Conversion between Bases
+  1. Conversion between Bases  (notes)
      * Between Powers of 2
      * Base 10 to Base N
      * Base N to Base 10
      * Decimal Real to Binary Real
+       - practicum
 
+  1. Mathematical Review & Base 2 Encodings
+     1. Base10: Mathematical Review
+        * Addition
+        * BCD Addition
+        * Subtraction
+        * Method of Complements
+        * Subtraction via Complements
+     
+     1. Base2: Encoding and Mathematical Operations
+        * Binary Addition
+        * Subtraction (Traditional Method)
+        * Method of Complements (2's and 1's Complement)
+          - Encoding of Negative Numbers
+        * Subtraction via Complements
+  
   1. Base64 Encoding

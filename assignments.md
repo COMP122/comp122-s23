@@ -78,6 +78,17 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
    - Due Date: Feb 21 23:59
 
+1. Name: whole2bin (In class assignment)
+   - Status: Graded
+   - Deliverable ID: 05
+   - Invitation URL: https://classroom.github.com/a/UxIBrZbU
+   - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
+
+1. Name: fractional2bin (In class assignment)
+   - Status: Released
+   - Deliverable ID: 06
+   - Invitation URL: https://classroom.github.com/a/_XTqm8hx
+   - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
 
 
 ---
@@ -142,10 +153,16 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/L_lMxoNI
    - Due Date: Mar 12 23:59
      
-1. Name: 
-   - Status: 
+1. Name: strlen
+   - Status: In class assignment
    - Deliverable ID: 44
    - Invitation URL: 
-   - Due Date: 
+   - Due Date: 2 hour limit and before Mar 28 23:59:59
 
+1. Name: dec2bin
+   - Status: Spec to be provided
+   - Deliverable ID: 45
+   - Invitation URL: https://classroom.github.com/a/U7-Zwn4k
+   - Due Date: April 13 23:59:59
+     - See 05-dec2bin & 06-fract
 
