@@ -125,9 +125,31 @@
      - comp122/format-encodings/documents/base2-encoding-and-mathematical-operations.pdf
 
   1. TAC for Mult & Div
-     - X = a * b;   div a, b;  mflo x
-     - X = a / b;
-     - x = a % b;
+
+     | TAC Mult / Div Equations      | MIPS Instruction          |
+     |-------------------------------|---------------------------|
+     | `x = a * b;`                  | `mult a, b`               |
+     |                               | `mflo x`                  |
+     |                               |                           |
+     | `x = a / b;`                  | `div a, b`                |
+     |                               | `mflo x`                  |
+     |                               |                           |
+     | `x = a % b;`                  | `div a, b`                |
+     |                               | `mfhi x`                  |
+     |                               |                           |
+
+     | TAC Mult/Div Psuedo Equations | MIPS Instruction          |
+     |-------------------------------|---------------------------|
+     | `x = a * b;`                  | `mul x, a, b`             |
+     | `x = a / b;`                  | `div x, a, b`             |
+     | `x = a % b;`                  | `mod x, a, b`             |
+
+     ```mips
+     .macro mod(%dst, %src1, %src2)
+         div %src1, $src2
+         mfhi %dst
+     .end_macro
+     ```
 
   1. Scaffolding for fractional2bin
 
