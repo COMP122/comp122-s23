@@ -94,8 +94,7 @@
               n = 23;               // the fractional value
               for(count=0; count < max_size; count++ ) {
                  n = n * 2
-                 if (n == 0) 
-                   break;
+                 if (n == 0) break;
                  if ( n >= max ) {
                      mips.print_di(1);
                      n = n - max; 
@@ -124,7 +123,7 @@
   1. Base2: Encodings and Mathematical Operations: 
      - comp122/format-encodings/documents/base2-encoding-and-mathematical-operations.pdf
 
-  1. TAC for Mult & Div
+  1. Additional TAC to MIPS mappings
 
      | TAC Mult / Div Equations      | MIPS Instruction          |
      |-------------------------------|---------------------------|
@@ -142,7 +141,7 @@
      |-------------------------------|---------------------------|
      | `x = a * b;`                  | `mul x, a, b`             |
      | `x = a / b;`                  | `div x, a, b`             |
-     | `x = a % b;`                  | `mod x, a, b`             |
+     | `x = a % b;`                  | `rem x, a, b`             |
 
      ```mips
      .macro mod(%dst, %src1, %src2)
@@ -150,6 +149,12 @@
          mfhi %dst
      .end_macro
      ```
+
+     | TAC Mult/Div Psuedo Equations | MIPS Instruction          |
+     |-------------------------------|---------------------------|
+     | `if (a <cond> b) break;`      | `b<cond> a, b, $done`     |
+     | `if (a <cond> b) continue;`   | `b<cond> a, b, $loop`     |
+
 
   1. Scaffolding for fractional2bin
 
