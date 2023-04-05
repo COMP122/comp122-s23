@@ -24,7 +24,30 @@
          - https://docs.google.com/spreadsheets/d/1aMvlfw_rzvYBObT94dX8v_O0EgELHgWrmZgWKmoLY7s/edit#gid=1434558784
       1. Whole part:  
          - 314 --> 2# 100111010
-  
+
+ 1. Integer Division Operation at the hardware level
+     - (r, w)  =  n / d;
+     - two values are returned
+       - the "r"emander goes into "hi"
+       - the "w"hole part goes into "lo"
+     - hi and lo are special purpose registers
+       - associated instructions:
+
+     | Pseudo Instruction    | MIPS Instruction       |
+     |-----------------------|------------------------|
+     | `x = $hi;`            | `mfhi x`               |
+     | `x = $lo;`            | `mflo x`               |
+     | `$hi = x;`            | `mthi x`               |
+     | `$lo = x;`            | `mtlo x`               |
+
+
+    ```mips
+     .macro mod(%dst, %src1, %src2)
+         div %src1, $src2
+         mfhi %dst
+     .end_macro
+     ```
+
  
 ---
 # Today's Material
@@ -50,7 +73,7 @@
       ```java
 
           max = 100;            // max = Math.pow(10, num_digits);
-          n = 23;               // the fractional value
+          n = 23;               // the fractional_value
           for(count=0; count < max_size; count++ ) {
              n = n * 2
              if (n == 0) break;
@@ -67,7 +90,7 @@
       1. Put the pieces together:
          - "100111010" + '.' + "0011101011100001010001111010111"
          ```java
-         void dec2bin(whole, fractional, digits, max) {
+         void dec2bin(whole, fractional, precision, max_size) {
          
             whole2bin(n);
             mips.print_ci('.');
@@ -92,8 +115,8 @@
      class fractional2bin {
        static MIPS_OS_Interface mips = new MIPS_OS_Interface();
      
-       static void fractional2bin(int fractional_value, 
-                                  int num_digits, 
+       static void fractional2bin(int fractional, 
+                                  int precision, 
                                   int max_size) {
      
        
