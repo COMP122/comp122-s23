@@ -29,10 +29,8 @@
 ## Today's Agenda:
    1. Pick up where we left off:  Decimal Real to Binary Real
       - 05-whole2bin:  Java-TAC --> MIPS.
-      - 06-fractional2bin:
-
-   1. Base10: Mathematical Review
-   1. (Foreshadow) Base2: Encodings and Mathematical Review
+   
+   1. Foreshadow: 06-fractional2bin:
 
 
 ## Questions from Last Lecture/Lab, etc.:
@@ -44,7 +42,7 @@
    * T/R @ 9:00 am: 
      - none
    * T/R @ 2:00 pm: 
-
+     - none
 
 ## Review from Last-time:
 
@@ -70,50 +68,32 @@
          - https://docs.google.com/spreadsheets/d/1aMvlfw_rzvYBObT94dX8v_O0EgELHgWrmZgWKmoLY7s/edit#gid=1434558784
       1. Whole part:  
          - 314 --> 2# 100111010
-         - See above
-      1. Fractional part: .23 --> . 0011101011100001010001111010111
-         - Previously:
-           ```java
-           max = 100;            // The desired precision
-           n = 23;               // the fractional value
-           while (n != 0 ) {
-              n = n * 2
-              if ( n >= max ) {
-                  mips.print_di(1);
-                  n = n - max; 
-              } else {
-                  mips.print_di(0);
-              }
-           }
-           ```
 
-        - Revised:
-          ```java
-          static void frac2bin(integer fractional_value, integer num_digits, int max_size) {
-  
-              max = 100;            // max = Math.pow(10, num_digits);
-              n = 23;               // the fractional value
-              for(count=0; count < max_size; count++ ) {
-                 n = n * 2
-                 if (n == 0) break;
-                 if ( n >= max ) {
-                     mips.print_di(1);
-                     n = n - max; 
-                 } else {
-                     mips.print_di(0);
-                 }
-              }
-          }
-          ```
-       - Foreshadow:  
+  1. Review the code we wrote the other day
+  1. Walk through the Java -> MIPS transliteration
+
+  1. Integer Division Operation at the hardware level
+     - (r, w)  =  n / d;
+     - two values are returned
+       - the "r"emander goes into "hi"
+       - the "w"hole part goes into "lo"
+     - hi and lo are special purpose registers
+       - associated instructions:
+
+     | Pseudo Instruction    | MIPS Instruction       |
+     |-----------------------|------------------------|
+     | `x = $hi;`            | `mfhi x`               |
+     | `x = $lo;`            | `mflo x`               |
+     | `$hi = x;`            | `mthi x`               |
+     | `$lo = x;`            | `mtlo x`               |
 
 
-      1. Put the pieces together:
-         - "100111010" + '.' + "0011101011100001010001111010111"
-
-   1. Base10: Mathematical-review
-      - See Slides: comp122/format-encodings/documents/base10-mathematical-review.pdf
- 
+    ```mips
+     .macro mod(%dst, %src1, %src2)
+         div %src1, $src2
+         mfhi %dst
+     .end_macro
+     ```
 
 ---
 ## Resources
@@ -144,48 +124,7 @@
      | `x = a / b;`                  | `div x, a, b`             |
      | `x = a % b;`                  | `rem x, a, b`             |
 
-     ```mips
-     .macro mod(%dst, %src1, %src2)
-         div %src1, $src2
-         mfhi %dst
-     .end_macro
-     ```
-
-     | TAC Mult/Div Psuedo Equations | MIPS Instruction          |
-     |-------------------------------|---------------------------|
-     | `if (a <cond> b) break;`      | `b<cond> a, b, $done`     |
-     | `if (a <cond> b) continue;`   | `b<cond> a, b, $loop`     |
-
-
-  1. Scaffolding for fractional2bin
-
-     ```java
-
-     class fractional2bin {
-       static MIPS_OS_Interface mips = new MIPS_OS_Interface();
-     
-       static void fractional2bin(integer fractional_value, integer num_digits, int max_size) {
-     
-       
-       }
-     
-       public static void main(String[] args){
-         final int mantissa_size = 23;  // This is the number of bits a binary32 mantissa
-      
-         arg_0 = Integer.parseInt(arg[0]);
-         arg_1 = (args[1])[0];
-         arg_2 = Integer.parseInt(args[2];
-         precision = args[2].length;
-      
-         dec2bin(arg_0);
-         mips.printc(arg_1);
-         fractional2bin(arg2, precision, mantissa_size);
-     
-         return;
-       } 
-     }
-     ```  
-
+ 
 
 ---
 ## Notes
