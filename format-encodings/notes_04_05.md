@@ -40,9 +40,7 @@
       - translation from TAC -> MIPS, how to do %
       - some reports of 44-strlen not having grade.report
    * M/W @ 2:00 pm: 
-     - none
    * T/R @ 9:00 am: 
-     - none
    * T/R @ 2:00 pm: 
 
 
@@ -52,8 +50,9 @@
       ```java
       n = number;
       for (count = 0; n != 0 ; count++ ){
-        n = n / 2;
         r = n % 2;
+        n = n / 2;
+
         mips.push(r);
       }
       for ( ; count > 0; count-- ) {
