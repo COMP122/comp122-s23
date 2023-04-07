@@ -27,7 +27,7 @@ EOF
 }
 
 #
-#         name: the name of the subroutine, located witin the file name.s
+#         name: the name of the subroutine, located within the file name.s
 #         arg:  an argument to be based to the subroutine
 #
 #         See mips_subroutine.md for a full description
@@ -219,6 +219,8 @@ function build_data_segment () {
   echo "                # ${SUB_CALL}"
   echo "                # Register Dump: ${DUMP_REG_LIST} ${DUMP_T_REGS} ${DUMP_V_REGS}"
   echo ""
+  echo "return_value:   .word 0" 
+  echo ""
   echo "${SPACE15} # Layout the command line arguments "
   echo "                .align 2"
   echo "argc:           .word  ${#SUB_ARGS_TEXT[@]}"
@@ -264,11 +266,11 @@ function build_data_segment () {
        
   done
   echo "                .align 2"
-  echo "saved_sp:       .word"
+  echo "saved_sp:       .word 0"
   echo "                .align 2"
-  echo "saved_float:    .float"
+  echo "saved_float:    .float 1.0"
   echo "                .align 3"
-  echo "saved_double:   .double"
+  echo "saved_double:   .double 1.0"
 }
 
 ## Marshaling of input arguments can be perform in two ways:
@@ -500,6 +502,23 @@ EOF
 
 EOF
 
+  # Save the value of the return... Note this only works for integers
+  echo "${SPACE15} # Save the return value from $v0"
+  echo "${SPACE15} sw \$v0, return_value"
+  echo ""
+
+  # Print a nl for the output "
+  echo "${SPACE15} # Print a blank line after the users output"
+  echo "${SPACE15} li \$a0, '\n'"
+  echo "${SPACE15} li \$v0, 11"
+  echo "${SPACE15} syscall"
+  echo ""
+
+  # Restroe the value of the return... Note this only works for integers
+  echo "${SPACE15} # Save the return value from $v0"
+  echo "${SPACE15} lw \$v0, return_value"
+  echo ""
+
   case ${SUB_RETURN_TYPE} in
     null) 
       echo "${SPACE15} # Print a blank line"
@@ -560,7 +579,7 @@ function pretty_print_output () {
 ###   - a pretty formatted output for arrays, etc.
   if [[ ${SUB_RETURN_TYPE} == "string" ]] ;  then
     echo ${SUB_RETURN_LINE}
-    # make sure the quotes stay in tact
+    # make sure the quotes stay intact
   else
     for i in ${SUB_RETURN_LINE} ; do
       case ${SUB_RETURN_TYPE} in
@@ -568,13 +587,13 @@ function pretty_print_output () {
           _decimal=${i}
           _hex=$(to_hex 8 ${i} )
           _binary=$(to_binary "${_hex}")
-          printf "%10d; 0x%s; 0b%s;\n" "${_decimal}" "${_hex}" "${_binary}"
+          printf "v0: %10d; 0x%s; 0b%s;\n" "${_decimal}" "${_hex}" "${_binary}"
           ;;
         long | long[] )
           _decimal=${i}
           _hex=$(to_hex 16 ${i} )
           _binary=$(to_binary "${_hex}")
-          printf "%20d; 0x%s; 0b%s;\n" "${_decimal}" "${_hex}" "${_binary}" 
+          printf "v0/v1: %20d; 0x%s; 0b%s;\n" "${_decimal}" "${_hex}" "${_binary}" 
           ;;
         double | double[] )
           echo ${i}
@@ -593,38 +612,59 @@ function pretty_print_output () {
 
 function post_process () {
   error_status="$1"
-  # Break the output into the following section
-  #   1. normal user output
-  #   1. the return value  (always one line)
-  #   1. user requested registers  (as calculated)
-  #   1. system requested registers (as calculated)
+  
+  # The output is structured as follows:
+  # ---
+  #  <user output>              : {calculated} lines
+  #  <extra \n>                 : 1 line, but if a not a empty line then, user forgot '\n'
+  #  return value               : 1 line
+  #  user requested registers   : {calculated} lines
+  #  system requested registers : {calculated} lines
 
   num_lines=$(wc -l < ${OUTPUT_FILE})
-  num_system_regs=$(awk '{print NF}' <<< ${DUMP_X_REGISTERS})
   num_regs=$(awk '{print NF}' <<< ${DUMP_REGISTERS})
-  num_user_lines=$(( num_lines - num_regs ))
+    num_system_regs=$(awk '{print NF}' <<< ${DUMP_X_REGISTERS})
+    num_user_regs=$(( num_regs - num_system_regs ))
+  num_return_lines=1
+  num_extra_lines=1
+  num_user_lines=$(( num_lines - (num_regs + 2) ))
 
-  # error... output is guarenteed to be one line ALWAYS
-  if [[ ${SUB_RETURN_TYPE} != "null" ]] ; then 
-    # If null, then there is no output
-    SUB_RETURN_LINE="$(sed -n ${num_user_lines}p < ${OUTPUT_FILE})"
-    ((  num_user_lines -= 1 ))  # remove one line
-  fi
+  last_output_line=$(( num_user_lines + 1 ))
+  return_line=$(( last_output_line + 1 ))
+
+  last_output_line="$(sed -n ${last_output_line}p < ${OUTPUT_FILE})"
+  return_line="$(sed -n ${return_line}p < ${OUTPUT_FILE})"
 
   # Send out the the normal user output
-  if (( num_user_lines > 0 )) ; then
-    head -n ${num_user_lines} ${OUTPUT_FILE} |
-    sed "s|$PWD/||"
-  fi 
+  if [[ ${num_user_lines} > 0 ]]; then 
+    head -n ${num_user_lines} ${OUTPUT_FILE} | sed "s|$PWD/||"
+  fi
+  if [[ ${last_output_line} != "" ]] ; then
+     # User forgot to provide the final '\n', so print out the line
+     echo "${last_output_line}" | sed "s|$PWD/||"
+  fi
 
   if [[ ${error_status} != 0 ]] ; then
      exit 1
   fi
 
+  if [[ num_user_lines > 0 || ${last_output_line} != "" ]] ; then
+    echo '#########################################'
+    echo '# Above is the output from your program'
 
-  #  Return value is a problem sometimes, this should be done conditionally
-  pretty_print_output "${SUB_RETURN_LINE}"
+    if [[ ${last_output_line} != "" ]] ; then
+      echo "# - note the last line of your"
+      echo "#   output did not include a '\n'"
+    fi
+    echo '#########################################'
+    echo
+  fi
 
+  # Grab the SUB_RETURN_LINE
+  if [[ ${SUB_RETURN_TYPE} != "null" ]] ; then 
+    SUB_RETURN_LINE="${return_line}"
+    pretty_print_output "${SUB_RETURN_LINE}"
+  fi
 
   # Perform the post processing
   #  1. validate param passing conventions 
@@ -739,7 +779,7 @@ while getopts hASsr:R:tv option ; do
         s)  SUMMARIZE="TRUE" ;;
         r)  DUMP_REG_LIST="${DUMP_REG_LIST} ${OPTARG}" ;;
         t)  DUMP_T_REGS="t0 t1 t2 t3 t4 t5 t6 t7 t8 t9" ;;
-        v)  DUMP_V_REGS="v0 v1" ;;
+        v)  DUMP_V_REGS="" ;;   # for now, handle via post processing
     esac
 done
 
