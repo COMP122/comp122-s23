@@ -7,15 +7,15 @@
    1. 06-fractional2bin: https://classroom.github.com/a/_XTqm8hx
       - copy over all your code from 45-dec2bin
 
-   1. Base10: Mathematical Review
-   1. (Foreshadow) Base2: Encodings and Mathematical Review
+   ~1. Base10: Mathematical Review~
+   ~1. (Foreshadow) Base2: Encodings and Mathematical Review~
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W @ 9:00 am: 
-   * M/W @ 2:00 pm: 
-   * T/R @ 9:00 am: 
-   * T/R @ 2:00 pm: 
+   * M/W @ 9:00 am: none
+   * M/W @ 2:00 pm: none
+   * T/R @ 9:00 am: none
+   * T/R @ 2:00 pm: none
 
 ## Review from Last-time:
 
@@ -41,10 +41,20 @@
      | `$lo = x;`            | `mtlo x`               |
 
 
+    - mod r, n, d  : rem r, n, d
     ```mips
      .macro mod(%dst, %src1, %src2)
          div %src1, $src2
          mfhi %dst
+     .end_macro
+     ```
+     - div_mod r, q, n, d
+     - div_mod(r, q, n, d)
+     ```mips
+     .macro div_mod(%dst1, %dst2, %src1, %src2)
+         div %src1, $src2
+         mfhi %dst1
+         mflo %dst2
      .end_macro
      ```
 
@@ -60,10 +70,10 @@
        while (n != 0 ) {
           n = n * 2
           if ( n >= max ) {
-              mips.print_di(1);
+              mips.print_d(1);
               n = n - max; 
           } else {
-              mips.print_di(0);
+              mips.print_d(0);
           }
        }
        ```
@@ -78,10 +88,10 @@
              n = n * 2
              if (n == 0) break;
              if ( n >= max ) {
-                 mips.print_di(1);
+                 mips.print_ci('1');
                  n = n - max; 
              } else {
-                 mips.print_di(0);
+                 mips.print_ci('0');
              }
           }
       ```
@@ -176,7 +186,8 @@
      | TAC Mult/Div Psuedo Equations | MIPS Instruction          |
      |-------------------------------|---------------------------|
      | `if (a <cond> b) break;`      | `b<cond> a, b, $done`     |
-     | `if (a <cond> b) continue;`   | `b<cond> a, b, $loop`     |
+     | `if (a <cond> b) continue;`   | `b<cond> a, b, $loop`     | 
+     * note caveats on continue
 
 
   
