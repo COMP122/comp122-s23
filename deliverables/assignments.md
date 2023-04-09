@@ -74,10 +74,21 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 1. Name: Mathematical Expressions
    - Status: Past Due
-   - Deliverable ID: 04
+   - Deliverable ID: 04-- reassigned to 41-
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
    - Due Date: Feb 21 23:59
 
+1. Name: whole2bin (In class assignment)
+   - Status: Graded
+   - Deliverable ID: 05
+   - Invitation URL: https://classroom.github.com/a/UxIBrZbU
+   - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
+
+1. Name: fractional2bin (In class assignment)
+   - Status: Released
+   - Deliverable ID: 06
+   - Invitation URL: https://classroom.github.com/a/_XTqm8hx
+   - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
 
 
 ---
@@ -90,22 +101,22 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="format">Format and Encoding (Section 2)</h3>
 
 1. Name: Table Encodings
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 21
    - Invitation URL: https://classroom.github.com/a/syiQChvY
-   - Due Date: March 2 23:59
+   - Due Date: Mar 2 23:59
 
 1. Name: UTF-8 Encoding
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 22
    - Invitation URL: https://classroom.github.com/a/a0psIcuu
-   - Due Date: March 5 23:59
+   - Due Date: Mar 5 23:59
  
  1. Name: Base Conversion and Floating Point Representation
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 23
    - Invitation URL: https://classroom.github.com/a/gz_mKhjN
-   - Due Date: March 12 23:59:59
+   - Due Date: Mar 12 23:59:59
    
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
@@ -115,13 +126,6 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Deliverable ID: 31
    - Invitation URL: 
    - Due Date: 
-
-1. Name: 
-   - Status: 
-   - Deliverable ID: 32
-   - Invitation URL: 
-   - Due Date: 
-
 
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
@@ -135,24 +139,30 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
      - Part 2:  MIPS Versions: Feb 21 23:59:59
 
 1. Name: Mathematical Expressions Redux
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 42
    - Invitation URL: https://classroom.github.com/a/Ijqpjvtl
    - Due Dates: 
-     - Accept Assignment: March 7 23:59:59
-     - Final Submission: March 9 23:59:59
+     - Accept Assignment: Mar 7 23:59:59
+     - Final Submission: Mar 9 23:59:59
      
 
 1. Name: binary32 Encoding
    - Status: Released,
    - Deliverable ID: 43
    - Invitation URL: https://classroom.github.com/a/L_lMxoNI
-   - Due Date: March 12 23:59
+   - Due Date: Mar 12 23:59
      
-1. Name: 
-   - Status: 
+1. Name: strlen
+   - Status: In class assignment -- graded
    - Deliverable ID: 44
    - Invitation URL: 
-   - Due Date: 
+   - Due Date: 2 hour limit and before Mar 28 23:59:59
 
+1. Name: dec2bin
+   - Status: Spec to be provided
+   - Deliverable ID: 45
+   - Invitation URL: https://classroom.github.com/a/U7-Zwn4k
+   - Due Date: Apr 13 23:59:59
+     - See 05-whole2bin & 06-fractional2bin
 

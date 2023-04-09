@@ -74,7 +74,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 1. Name: Mathematical Expressions
    - Status: Past Due
-   - Deliverable ID: 04
+   - Deliverable ID: 04-- reassigned to 41-
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
    - Due Date: Feb 21 23:59
 
@@ -154,7 +154,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Mar 12 23:59
      
 1. Name: strlen
-   - Status: In class assignment
+   - Status: In class assignment -- graded
    - Deliverable ID: 44
    - Invitation URL: 
    - Due Date: 2 hour limit and before Mar 28 23:59:59
@@ -163,6 +163,6 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Status: Spec to be provided
    - Deliverable ID: 45
    - Invitation URL: https://classroom.github.com/a/U7-Zwn4k
-   - Due Date: April 13 23:59:59
-     - See 05-dec2bin & 06-fract
+   - Due Date: Apr 13 23:59:59
+     - See 05-whole2bin & 06-fractional2bin
 
