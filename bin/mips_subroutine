@@ -880,7 +880,7 @@ build_boot_file
 #  1. Execute Mars with boot file
 #  ae1 is needed in the case there is a linkage error.
 #  10000 is the max number of instructions to execute to prevent infinite loops
-${MARS} 10000 nc sm ae2 se1  ${DUMP_REGISTERS} \
+${MARS} 10000 nc sm ae2 se1 p ${DUMP_REGISTERS} \
      ${BOOT_FILE} ${SUB_NAME_FILE} > ${OUTPUT_FILE} 2>/dev/null
 if [[ $? == 2 ]] ; then 
    sed "s|$PWD/||" ${OUTPUT_FILE}
