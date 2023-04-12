@@ -33,40 +33,45 @@
 
    1. Java's Integer Represenations:
       * `unsigned int X;` -- Nope does not have it
-      * `signed int X`
-         - byte  | 1 byte  | -  2^7 ..  2^7 -1 | -128 to 127
-         - short | 2 bytes | - 2^15 .. 2^15 -1 | -32,768 to 32,767
-         - int   | 4 bytes | - 2^23 .. 2^23 -1 | -2,147,483,648 to 2,147,483,647
-         - long  | 8 bytes | - 2^32 .. 2^31 -1 | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+        - unsigned char  | 1 byte  | 0 .. 2^8-1   | 0 to 255
+        - unsigned short | 2 bytes | 0 .. 2^16 -1 | 0 .. 64K
+        - unsigned int   | 4 bytes | 0 .. 2^32 -1 | 0 .. 4GB 
+
+
+      * `signed int X`  .byte, .half, .word, .dword
+        - byte  | 1 byte  | -  2^7 ..  2^7 -1 | -128 to 127
+        - short | 2 bytes | - 2^15 .. 2^15 -1 | -32,768 to 32,767
+        - int   | 4 bytes | - 2^31 .. 2^31 -1 | -2,147,483,648 to 2,147,483,647
+        - long  | 8 bytes | - 2^63 .. 2^63 -1 | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 
    1. Converting Base n --> Base 10 (Recall)
 
       - 16#     ==> 10#
-        | v  |  =  |  v  | * | base | + | digit | glyph |
-        |----|-----|-----|---|------|---|-------|-------|
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |  
-
+        |   v  |  =  |   v  | * | base | + | digit | glyph |
+        |------|-----|------|---|------|---|-------|-------|
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |  
+   
       - 16#      ==>  10# 
-        | v  |  =  |  v  | * | base | + | digit | glyph |
-        |----|-----|-----|---|------|---|-------|-------|
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |   
-        |    |  =  |     | * | base | + |       |       |          
-
+        |   v  |  =  |   v  | * | base | + | digit | glyph |
+        |------|-----|------|---|------|---|-------|-------|
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |   
+        |      |  =  |      | * | base | + |       |       |  
+   
 
    1. Converting Base 10 --> Base 2 (Recall)
-       - 10#      ==>  2# 
+       - 10# 1234  ==>  2# 0100 1101 0010
 
        ```
-       number = 162                       
+       number = 1234                       
          1234 / 2 -> 617, 0
           617 / 2 -> 308, 1
           308 / 2 -> 154, 0
@@ -80,7 +85,7 @@
             1 / 2 ->   0, 1
             0 / 2 ->   0, 0
                                   
-       answer: (from bottom to top)      
+       answer: 010011010010 (from bottom to top)      
        ```
 
    1. Floating Point Representation
@@ -94,7 +99,7 @@
          1. Put into Scientific Notation
             - 2# - 1 . 111011 00011111100101110010010 x 2^ + 0110 (6)
 
-         1. Encode the value
+         1. Encode the value in, say, Binary16
             - Encode the sign
             - Drop the whole
             - Add the bias to the exponent (6 + 15)
@@ -102,14 +107,15 @@
             - Shift the values into place
 
          1. For Binary16
+            - s | e eeee |  mmmm mmmm mmm
             - x | x xxxx |  xxxx xxxx xxx
-            - 1 | 1 0110 |  1110 1100 011
+            - 1 | 1 0101 |  1110 1100 011
    
 
    1. Java's ~ and - operators:
       1.  short int x = ~ y;   
           - x and y are 1 complements
-          - x + y =  2^16 - 1;  // 0 : 1111 1111 1111 1111
+          - x + y =  (unsiged) 2^16 - 1;  // 0 : 1111 1111 1111 1111
 
       1.  short int a = - b;   
           - a and b are 2 complements
@@ -127,7 +133,7 @@
         - the binary string for -5?
 
       * What is the binary encoding of:
-        -  5:
+        -  5: 
         - ~5:
         - -5:
 
@@ -137,10 +143,14 @@
       -  5 = 2# + 0000 0101
       - -5 = 2# - 0000 0101
 
+                  binary
      | number | unsigned  | 1's comp  | 2's comp  |
      |--------|-----------|-----------|-----------|
      |   5    | 0000 0101 | 0000 0101 | 0000 0101 |
      |  -5    | -- NA --  | 1111 1010 | 1111 1011 |
+
+
+
 
 
    1. Binary Addition
