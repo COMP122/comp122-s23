@@ -28,10 +28,12 @@ Note that Section 4 will be covered in parallel with the other section of the Cl
 |    8   | 3/13 |  Loops                | Strings/Loops       | Java Shift            |
 |        | 3/20 |  <b>Spring</b>        | <b>Break</b>        |                       |
 |    9   | 3/27 |  Strings Practicum    | Base Conversion     | dec2bin               |
-|   10   | 4/03 |  ascii2bin / fraction | Base 10 / 2         | ascii2bin             |       
-|   11   | 4/10 |  Base64               | In class Exam       |                       |
-|   12   | 4/17 |  MIPS Subroutines     | practicum           |                       |
-|   13   | 4/24 |  Intro to Circits     | Combination         |                       |
-|   14   | 5/01 |  Control Lines/CPU    | State & MicroArch   |                       |
-|   15   | 5/08 |  buffer               | review              | quiz                  |
+|   10   | 4/03 |  conversion, whole    | conversion, fraco   | dec2bin               |
+|   11   | 4/10 |  Base 10 & 2  Math    | Number encodings    |                       |
+
+|   12   | 4/17 | Multiplication        | In class Exam       | multiplication        |
+
+|   13   | 4/24 |  Intro to Circits     |  Combination        |                       |
+|   14   | 5/01 | Control Lines/CPU     |  State & MicroArch  |   quiz                |
+|   15   | 5/08 |  base64 subroutine    |  Command line       |                       |
   

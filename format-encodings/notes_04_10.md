@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: April 5, 2023
+# COMP122 Lecture Notes: April 10, 2023
 
 ## Announcements:
    - 45-dec2bin: 
