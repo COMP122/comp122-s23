@@ -12,9 +12,9 @@
    1. Converting Base n --> Base 10 (Recall)
    1. Converting Base 10 --> Base 2 (Recall)
    1. Floating Point Representation (Recall)
-   1. Java's ~ and - operators:
+   1. Java's unary operators: ~ and - 
    1. Complements of numbers: Review
-   1. Encodings (8 bit): Review
+   1. Encodings (8 bit): Continuation from M/T
    1. Binary Addition: Review
   
 
