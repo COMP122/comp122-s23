@@ -1,7 +1,7 @@
 # COMP122 Lecture Notes: April 12, 2023
 
 ## Announcements:
-   - In-class Exam: April 19th
+   - In-class Exam: April 19/20
      * Coverage:
        - Formats and Encodings
        - MIPS programming
@@ -17,7 +17,6 @@
    1. Encodings (8 bit): Continuation from M/T
    1. Binary Addition: Review
   
-
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
@@ -56,16 +55,7 @@
         |      |  =  |      | * | base | + |       |       |   
         |      |  =  |      | * | base | + |       |       |  
    
-      - 16#      ==>  10# 
-        |   v  |  =  |   v  | * | base | + | digit | glyph |
-        |------|-----|------|---|------|---|-------|-------|
-        |      |  =  |      | * | base | + |       |       |   
-        |      |  =  |      | * | base | + |       |       |   
-        |      |  =  |      | * | base | + |       |       |   
-        |      |  =  |      | * | base | + |       |       |   
-        |      |  =  |      | * | base | + |       |       |   
-        |      |  =  |      | * | base | + |       |       |  
-   
+    
 
    1. Converting Base 10 --> Base 2 (Recall)
        - 10# 1234  ==>  2# 0100 1101 0010
@@ -85,7 +75,7 @@
             1 / 2 ->   0, 1
             0 / 2 ->   0, 0
                                   
-       answer: 010011010010 (from bottom to top)      
+       answer: 0100 1101 0010 (from bottom to top)      
        ```
 
    1. Floating Point Representation
@@ -113,11 +103,11 @@
    
 
    1. Java's ~ and - operators:
-      1.  short int x = ~ y;   
+      1.  (unsigned) short int x = ~ y;   
           - x and y are 1 complements
-          - x + y =  (unsiged) 2^16 - 1;  // 0 : 1111 1111 1111 1111
+          - x + y =  2^16 - 1;  // 0 : 1111 1111 1111 1111
 
-      1.  short int a = - b;   
+      1.  (unsigned) short int a = - b;   
           - a and b are 2 complements
           - a + b =  0 == 2^16  // 1 : 0000 0000 0000 0000
 
@@ -126,40 +116,68 @@
 
    1. Complements of numbers
       * What is ... 
-        - the 1's complement of 5 ?   ~5
-        - the 2's complement of 5 ?   -5
-      * What is
-        - the binary string for 5?
-        - the binary string for -5?
+        - the 1's complement of X?  ~X
+        - the 2's complement of 5 ?  -5 
 
-      * What is the binary encoding of:
-        -  5: 
-        - ~5:
-        - -5:
+      * What is
+        - the binary string for 5?   2# + 0000 0101 . 0000
+        - the binary string for -5?  2# - 0000 0101 . 0000
+
+      * What is the binary encoding of:  (say 16 bits)
+        -  5: 0000 0000 0000 0101
+        - ~5: 1111 1111 1111 1010
+        - -5: 1111 1111 1111 1011
 
 
 
    1. Encodings (8 bit)
-      -  5 = 2# + 0000 0101
-      - -5 = 2# - 0000 0101
+      -  5 = 2# + 000 0101
+      - -5 = 2# - 000 0101
+
+      -  133 = 2# + 1000 0101
+      - -133 = 2# - 1000 0101
+
+      - 25  = 2# +  0001 1001
+      - -25 = 2# -  0001 1001 
 
                   binary
-     | number | unsigned  | 1's comp  | 2's comp  |
-     |--------|-----------|-----------|-----------|
-     |   5    | 0000 0101 | 0000 0101 | 0000 0101 |
-     |  -5    | -- NA --  | 1111 1010 | 1111 1011 |
+     | number | unsigned  | 1's comp   | 2's comp   |
+     |--------|-----------|------------|------------|
+     |   5    | 0000 0101 | 0 000 0101 | 0 000 0101 |
+     |  -5    |    NA     | 1 111 1010 | 1 111 1011 |
+     |  133   | 1000 0101 | --- NA --  | -- NA --   |
+     | -133   |    NA     |            |            |
+
+     |  25    | 0001 1001 | 0001 1001  | 0001 1001  |
+     | -25    | -- NA --  | 1110 0110  | 1110 0111  |
 
 
 
+   1. Binary Addition (2's complement encoding)
+      - 5 - 25
+      - 5 + -25
 
-
-   1. Binary Addition
       ```
-      x xxxx xxxx               <!-- response: carries -->
-        xxxx xxxx               <!-- response: op1 encoding -->
-      + xxxx xxxx               <!-- response: op2 encoding -->
+      0 0000 1110               <!-- response: carries -->
+        0000 0101               <!-- response: op1 encoding -->
+      + 1110 0111               <!-- response: op2 encoding -->
       ------ ----           
-      y yyyy yyyy               <!-- response: sum encoding -->
+      0 1110 1100               <!-- response: sum encoding -->
+      ```
+      * decode: 1110 1100 
+        - ~ 1110 1100 = 0001 0011
+        - +1 0001 0011 = 001 0100 
+        - 001 0100 = 10# 20
+
+   1. Binary Addition (1's complement encoding)
+      -  5 - 25 --> 5 + -25
+
+      ```
+      0 0000 1111               <!-- response: carries -->
+        0000 0101               <!-- response: op1 encoding -->
+      + 1110 0110               <!-- response: op2 encoding -->
+      ------ ----           
+      0 1110 1100               <!-- response: sum encoding -->
       ```
 
 ---
