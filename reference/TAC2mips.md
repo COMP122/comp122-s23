@@ -1,11 +1,31 @@
-## Resources
+# Java TAC to MIPS Transliteration
 
-  * TAC Instructions and Corresponding MIPS Instructions
-    - see also: ~/classes/comp122/reference/MIPS-cheatsheet.pdf
-    - `MIPS <op_i>  <- Java operator`
-      * addi: +, subi: -, ori: |, andi: &, xori: ^
-    - `MIPS <op>  <- Java operator`
-      * add: +, sub: -, or: |, and: &, xor: ^,
+Once you have rewritten your JAVA method into the JAVA TAC style, you can use the information in this documement to transliterate your method into a MIPS subroutine.
+
+Note that sometimes there is not a 100% direct correlation between your JAVA TAC instruction and a set of MIPS instruction. Hence, some thinking is necessary when performing the transliteration.
+
+## Other Resources
+
+  - MIPS Cheatsheet: ~/classes/comp122/reference/MIPS-cheatsheet.pdf
+  - Java to Java TAC transformation: (under development)
+
+## Notation:
+  - Scalar values:                lower case letters, e.g. `a, b, c, ..x`
+  - Arrays and Memory locations:  upper case letters, e.g., `A, B, C, ..X`
+  - Literals and Immediate values:  `imm`
+  - Registers:  a word prefix with a dollar, e.g., $zero
+  - Metasymbol: a word enclosed in braces, e.g., {loop}
+
+### Mathematica Equations and the Null Statement
+
+  * Notation: TAC Instructions and Corresponding MIPS Instructions
+    - Patterns
+      1. Java Instructions with one literal:  `x = a <op_i> 2;`
+         - `MIPS <op_i>  <- Java operator`
+           * addi: +, subi: -, ori: |, andi: &, xori: ^
+      1. Java Instructions with two varialbes: `x = a <op> b;`
+         - `MIPS <op>  <- Java operator`
+           * add: +, sub: -, or: |, and: &, xor: ^,
 
 
       | TAC Equations                 | MIPS Instructions         |
@@ -46,8 +66,13 @@
 
       | TAC String Equations          | MIPS Instruction          |
       |-------------------------------|---------------------------|
+      | `p = & A;`                    | `la p, A`                 |
+      | `x = (* p);`                  | `lb x, 0(p)`              |
+      | `(* p) = x;`                  | `sb x, 0(p)`              |
+      |                               |                           |
       | `x = A[imm];`                 | `la p, A`                 |
       |                               | `lb x, imm(p)`            |
+      |                               |                           |
       |                               |                           |
       | `x = A[v];`                   | `la p, A`                 |
       |                               | `add p, p, v`             |
@@ -60,33 +85,36 @@
       |                               |                           |
       |                               | `add p, p, v`             |
       |                               | `sb x, 0(a)`              |
-      |                               |                           |
-      | `x = & A;`                    | `la x, A`                 |
-      | `x = (* p);`                  | `lb x, 0(p)`              |
-      | `(* p) = x;`                  | `sb x, 0(p)`              |
 
     - Control flow labels
-      * $cons: the consequence for an if-then-else statement
-      * $alt:  the alternative for an if-then-else statement
-      * $done: the statement after the control-flow statement
-      * $loop: the conditional statement associated with a loop statement
+      * {cons}: the consequence for an if-then-else statement
+      * {alt}:  the alternative for an if-then-else statement
+      * {test}: the conditional statement loop statement
+      * {body}: the body of a loop
+      * {done}: the statement after a control-flow statement
 
-      | TAC Control Flow              | MIPS Instruction          |
-      |-------------------------------|---------------------------|
-      | `label: ;`                    | `label: nop`              |
-      | `if (a <cond> b) {`           | `b<! cond> a, b, $alt`    |
-      | `} else {`                    | `# end of block`          |
-      | `for(; a <cond> b ;) {`       | `b<! cond> a, b, $done`   |
-      | `while(a <cond> b) {`         | `b<! cond> a, b, $done`   |
+      | TAC Control Flow                | MIPS Instruction          |
+      |---------------------------------|---------------------------|
+      | `label: ;`                      | `label: nop`              |
+      | `if (a <cond> b) {`             | `b<! cond> a, b, {alt}`   |
+
+      | `if (a <cond> b) {`             | `b<cond> a, b, {cons}`    |
+      |                                 | `b {alt}`                 |
+
+
+      | `} else {`                      | `# end of block`          |
+      | `test:  for(; a <cond> b ;) {`  | `b<! cond> a, b, {done}`  |
+
+      | `for(; a <cond> b ;) {`       | `b<cond> a, b, {body}`    |
+      |                               | `b {done}`                |
+
+      | `while(a <cond> b) {`         | `b<! cond> a, b, {done}`  |
       | `continue label;`             | `b label`                 |
-      | `// break;`                   | `b $done`                 |
-      | `break;`                      | `b $done`                 |
+      | `// break;`                   | `b {done}`                |
+      | `break;`                      | `b {done}`                |
       | `}`                           | `# end of block`          |
       |                               |                           |
-      | `if (a <cond> b) break;`      | `b<cond> a, b, $done`     |
-      | `if (a <cond> b) continue;`   | `b<cond> a, b, $loop`     |
-
-
+      | `if (a <cond> b) break;`      | `b<cond> a, b, {done}`    |
 
 
       | `TAC <cond>` | `MIPS <cond>` | `MIPS <! cond>` |`TAC <! cond>` |
