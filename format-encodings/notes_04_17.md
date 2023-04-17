@@ -7,7 +7,7 @@
        - MIPS programming
    - Assignment 24-binary-addition released
    - Participation 07-multiplication available
-     - https://classroom.github.com/a/AUw69HyY
+     - https://classroom.github.com/a/MEy_MAfw
 
 ## Today's Agenda:
 
@@ -94,7 +94,8 @@
   1. Long Multiplication: Base 2
      - Leverage:
        - x * 0 == 0
-       - x << 1 ==  x / 2
+       - x << 1 ==  x * 2
+       - x >>> 1 == x / 2
 
      ```java java/long_mult_bin
      public static int long_mult_bin(int a, int b){
