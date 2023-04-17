@@ -74,7 +74,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 1. Name: Mathematical Expressions
    - Status: Past Due
-   - Deliverable ID: 04-- reassigned to 41-
+   - Deliverable ID: 04- reassigned to 41-
    - Invitation URL: https://classroom.github.com/a/HguPKR5J
    - Due Date: Feb 21 23:59
 
@@ -88,7 +88,14 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Status: Released
    - Deliverable ID: 06
    - Invitation URL: https://classroom.github.com/a/_XTqm8hx
-   - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
+   - Due Date: 2 hour limit and before Mar 28 23:59:59 (Lax grading)
+
+
+1. Name: multiplication (In class assignment)
+   - Status: Released
+   - Deliverable ID: 07
+   - Invitation URL: https://classroom.github.com/a/AUw69HyY
+   - Due Date: 2 hour limit and before Apr 18 23:59:59
 
 
 ---
@@ -117,7 +124,13 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Deliverable ID: 23
    - Invitation URL: https://classroom.github.com/a/gz_mKhjN
    - Due Date: Mar 12 23:59:59
-   
+ 
+  1. Name: Binary Addition et al
+   - Status: Release
+   - Deliverable ID: 24
+   - Invitation URL: https://classroom.github.com/a/AUw69HyY
+   - Due Date: Apr 18 23:59:59
+
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
 
