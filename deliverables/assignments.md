@@ -94,7 +94,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 1. Name: multiplication (In class assignment)
    - Status: Released
    - Deliverable ID: 07
-   - Invitation URL: https://classroom.github.com/a/AUw69HyY
+   - Invitation URL: https://classroom.github.com/a/MEy_MAfw
    - Due Date: 2 hour limit and before Apr 18 23:59:59
 
 
