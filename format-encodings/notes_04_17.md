@@ -5,11 +5,19 @@
      * Coverage:
        - Formats and Encodings
        - MIPS programming
+   - Assignment 24-binary-addition released
+   - Participation 07-multiplication available
+     - https://classroom.github.com/a/AUw69HyY
 
 ## Today's Agenda:
 
    1. Multiplication
-   1. Participation: 07-mutlitiplication  
+   1. Long Multiplication: Base 10
+   1. Long Multiplication: Base 2
+      - with an array of digits
+      - with a register stack of digits
+   1. Specialized Hardware
+   1. Participation: 07-multiplication  
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
@@ -27,7 +35,7 @@
      - Issues:
        1. Overflow: 
           - Consider: 127 * 127 = 16,129 
-            ```java mult_size.j
+            ```java java/mult_size.j
             public static int mult_size() {
                byte a = 127;
                byte b = 127;
@@ -47,7 +55,9 @@
 
        1. Execution Time:
           - Successive Additions
-            ```java mult_loop.j
+            - java_subroutine mult_loop a b
+
+            ```java java/mult_loop.j
             public static int mult_loop(int a, int b) {
             
                  int $v0 = 0;
@@ -60,16 +70,99 @@
           - Notice line: `add` above
             - It is executed `b` times.
 
-     - Alternative Approach:
-       1. Specialized Hardware: (Mult/Add unit)
-       1. Long Multiplication:  (Software)
-          
-       1. Long Multiplication
+  1. Long Multiplication: Base 10
+     - View the number as an array of digits;
+     
+     ```java java/long_mult.j
+     public static int long_mult(int a, int b){
+       int[] B = digits(b);
+
+       int sum = 0;
+       for (int d = 0 ; d < B.length ; d ++ ) {
+         sum += a * B[d];
+         a = a * 10 ;
+       }
+       return sum;
+     }
+     ```
+
+     ```bash
+     cd java
+     java_subroutine long_mult 23 10
+     ```
+
+  1. Long Multiplication: Base 2
+     - Leverage:
+       - x * 0 == 0
+       - x << 1 ==  x / 2
+
+     ```java java/long_mult_bin
+     public static int long_mult_bin(int a, int b){
+       int[] B = binary_digits(b);
+     
+       int sum = 0;
+       for (int d = 0 ; d < 32 ; d ++ ) {
+         if (B[d] == 1) {
+           sum += a;
+         }
+         a = a << 1;
+       }
+       return sum;
+     }
+     ```
+     ```bash
+     cd java
+     java_subroutine long_mult_bin 23 10
+     ```
+
+  1. Long Multiplication: Base 2
+     - View the register as a stack
+
+     ```java java/multiplication.j
+     public static int multiplication(int a, int b){
+       // Algorithmic Complexity: O(word_size)
+
+       int sum = 0;
+       int bit = 0;
+
+       for (; b != 0 ; ) {
+         // pop off a bit from b
+         bit = b & 0x01;  
+         b = b >>> 1;
+
+         if ( bit == 1 ) {
+           sum += a;
+         }
+         a = a << 1;
+       }
+       return sum;
+     }
+     ```
+
+     ```bash
+     cd java
+     java_subroutine multiplication 23 10
+     ```
+
+
+  1. Specialized Hardware (Mult/Add unit)
+     - native instructions 
+       - mul $t0, $t1
+       - div $t0, $t1
+       - madd $t0, $t1
+         *  `a*x + b*x + c*x` 
+     - pseudo instructions
+       - mult, div, rem, etc.
+
+  1. Practicum: 
+     - multiplication.s
+     - https://classroom.github.com/a/AUw69HyY
+
 
 ---
 ## Resources
 
-
+  1. documents/multiplication.pdf
 
 ---
 ## Notes
