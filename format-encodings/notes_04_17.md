@@ -22,7 +22,7 @@
 ## Questions from Last Lecture/Lab, etc.:
    * M/W @ 9:00 am: 
    * M/W @ 2:00 pm: 
-   * T/R @ 9:00 am: 
+   * T/R @ 9:00 am: status flags
    * T/R @ 2:00 pm: 
 
 ## Review from Last-time:
@@ -56,6 +56,8 @@
        1. Execution Time:
           - Successive Additions
             - java_subroutine mult_loop a b
+
+
 
             ```java java/mult_loop.j
             public static int mult_loop(int a, int b) {
