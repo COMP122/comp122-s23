@@ -134,11 +134,11 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 ---
 <h3 id="digital">Digital Logic (Section 3)</h3>
 
-1. Name: 
-   - Status: 
+1. Name: Digital-Logic
+   - Status: Released
    - Deliverable ID: 31
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/QxOuzufc
+   - Due Date: May 9 23:59:59
 
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
