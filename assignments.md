@@ -28,7 +28,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
  
 
 1. Exam 2: Formats and Encodings
-   - Status: Pending
+   - Status: Graded
    - Additional Information:  In-Class Exam
    - Deliverable ID: 20
    - Invitation URL:
@@ -42,7 +42,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: 
 
 1. Exam 4: MIPS Assembly Language
-   - Status: Pending
+   - Status: Cancelled.. Merged with 20-
    - Additional Information: In-Class Exam
    - Deliverable ID: 40
    - Invitation URL: 
@@ -85,17 +85,17 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: 2 hour limit and before Mar 28 23:59:5 (Lax grading)
 
 1. Name: fractional2bin (In class assignment)
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 06
    - Invitation URL: https://classroom.github.com/a/_XTqm8hx
-   - Due Date: 2 hour limit and before Mar 28 23:59:59 (Lax grading)
+   - Due Date: 2 hour limit and before Apr 10 23:59:59 (Lax grading)
 
 
 1. Name: multiplication (In class assignment)
-   - Status: Released
+   - Status: Grade
    - Deliverable ID: 07
    - Invitation URL: https://classroom.github.com/a/MEy_MAfw
-   - Due Date: 2 hour limit and before Apr 18 23:59:59
+   - Due Date: 2 hour limit and before Apr 18 23:59:59 (Lax grading)
 
 
 ---
@@ -126,7 +126,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Mar 12 23:59:59
  
   1. Name: Binary Addition et al
-   - Status: Release
+   - Status: Graded
    - Deliverable ID: 24
    - Invitation URL: https://classroom.github.com/a/AUw69HyY
    - Due Date: Apr 18 23:59:59
@@ -138,7 +138,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Status: Released
    - Deliverable ID: 31
    - Invitation URL: https://classroom.github.com/a/QxOuzufc
-   - Due Date: May 9 23:59:59
+   - Due Date: May 9 23:59:59 (revised)
 
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
@@ -167,13 +167,13 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Mar 12 23:59
      
 1. Name: strlen
-   - Status: In class assignment -- graded
+   - Status: Graded (In class assignment)
    - Deliverable ID: 44
    - Invitation URL: 
    - Due Date: 2 hour limit and before Mar 28 23:59:59
 
 1. Name: dec2bin
-   - Status: Spec to be provided
+   - Status: Released
    - Deliverable ID: 45
    - Invitation URL: https://classroom.github.com/a/U7-Zwn4k
    - Due Date: Apr 13 23:59:59
