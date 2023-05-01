@@ -17,8 +17,8 @@
 
    - Outstanding Grading:
      * 45-dec2bin
-     * 31-digital-logic (May 9)
-     * 30-quiz-digital-logic (May 10/11)
+     * 31-digital-logic (due: May 9)
+     * 30-quiz-digital-logic (due: May 10/11)
 
      
 ## Today's Agenda:
