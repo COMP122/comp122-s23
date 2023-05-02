@@ -7,12 +7,26 @@
 # As the semester progresses, the importance of this file
 # diminishes, as actual grades are used in the calculations.
 
-# The Syllabus has the following break down for scores:
+# The Syllabus has the following percentage break down for scores:
 
-PARTICIPATION_WEIGHT=0.15
-QUIZ_WEIGHT=0.15
-LABORATORY_WEIGHT=0.40
-EXAM_WEIGHT=0.30
+PARTICIPATION_PERCENT=15
+QUIZ_PERCENT=15
+LABORATORY_PERCENT=40
+EXAM_PERCENT=30
+
+############################
+# The following are defaults that are used until the quiz/exam is actually given.
+# You may updated these values based upon how you "feel" you will do at this time.
+#   -- read further below for more information
+#
+
+# QUIZ SECTION
+ASSIGNMENT_10_total=70    # May anticipated quiz score for the Models Section
+ASSIGNMENT_30_total=70    # May anticipated quiz score for the Digital Logic Section
+
+# EXAM SECTION
+ASSIGNMENT_20_total=10    # May anticipated exam score for the Formats/Encodings Section
+ASSIGNMENT_40_total=70    # May anticipated exam score for the MIPs Section
 
 
 #####################################################################
@@ -76,14 +90,5 @@ EXAM_WEIGHT=0.30
   #   ASSIGNMENT_42_total=
   #   ASSIGNMENT_43_total=
   #   ...
-
-
-# QUIZ SECTION
-ASSIGNMENT_10_total=70        # Set to your anticipated score on the Quiz for the Models Section
-ASSIGNMENT_30_total=70        # Set to your anticipated score on the Quiz for the Digital Logic Section
-
-# EXAM SECTION
-ASSIGNMENT_20_total=70        # Set to your anticipated score on the Exam for the Formats/Encodings Section
-ASSIGNMENT_40_total=70        # Set to your anticipated score on the Exam for the MIPs Section
 
 

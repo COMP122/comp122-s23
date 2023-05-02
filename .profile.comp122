@@ -5,6 +5,11 @@ export COMP122_BIN="${COMP122_HOME}/bin"
 export COMP122_KEY="$HOME/.ssh/id_comp122_github"
 
 export GIT_EDITOR
+export SUBLIME_BIN
+export SUBLIME
+export LAUNCH
+export CLIP_COPY
+
 
 # Check which effective OS is being used
 _OS=$(uname -o 2>/dev/null)

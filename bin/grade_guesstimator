@@ -2,7 +2,7 @@
 
 dir_name=$(basename $(pwd) )
 if [[ ${dir_name} != 'deliverables' ]] ; then
-  cat > $0.md <<-EOF
+  cat > /tmp/$$.md <<-EOF
 ## Grade guesstimator
 This tool provides a guesstimate of your final grade--based upon a number of assumptions.
 Such assumptions may not come to fluition!  Hence, this tool can only be used to provide 
@@ -15,12 +15,12 @@ the student with an guesstimate of what their final grade _might_ be.
    - You can view the output file via a text editor, but the alignment of values within a table may be off.
 
 1. If you have followed the directions to setup your COMP122 filesystem, then execute the following steps:
-   - \`cd $COMP122_HOME\`
+   - \`cd ${COMP122_HOME}\`
    - \`cp etc/grade_guesstimator.defaults deliverables/grade_guesstimator.defaults\`
 
 #### Setup
 
-1. Edit the file $COMP122_HOME/deliverables/grade_guesstimator.defaults, as appropriate
+1. Edit the file ${COMP122_HOME}/deliverables/grade_guesstimator.defaults, as appropriate
 1. Ensure you do a \`git pull\` on each of your individual deliverables
 
 
@@ -29,12 +29,12 @@ the student with an guesstimate of what their final grade _might_ be.
 1. If you have followed the directions to setup your COMP122 filesystem, and befored the installation step, then execute the following commands.
 
    \`cd classes/comp122/deliverables\`
-   \`./grade_guesstimator\`
+   \`grade_guesstimator\`
 
 1. You may edit the values within the file grade_guesstimator.defaults to obtain a better guesstimate of your grade.
 
 EOF
-  open $0.md &
+  ${LAUNCH} /tmp/$$.md &
   exit 1
 fi
 
@@ -91,22 +91,26 @@ function average () {
 #    1. bbb_dd.guesstimated_grade.md
 #    1. .grade_list
 
-[[ -z ${COMP122_HOME } ]]  && 
+[[ -z ${COMP122_HOME} ]]  && 
   { echo Comp122 Environment has not be setup correctly; exit 2; }
 
 
 # Source the default grade assignment
-if [[ -f $COMP122_HOME/deliverables/grade_guesstimator.defaults ]] ; then
-  source $COMP122_HOME/deliverables/grade_guesstimator.defaults
+if [[ -f ${COMP122_HOME}/deliverables/grade_guesstimator.defaults ]] ; then
+  source ${COMP122_HOME}/deliverables/grade_guesstimator.defaults
+else
+  source ${COMP122_HOME}/bin/grade_guesstimator.defaults
 fi
+
+
 
 # Source each grade.report
 rm -f .grade_list
 while read _grade_report ; do
-    grep "ASSIGNMENT_\.*=" $_grade_report
-done < <( find $COMP122_HOME/deliverables/ -name grade.report -print ) >> .grade_list
+    grep "ASSIGNMENT_.*=" $_grade_report
+done < <( find . -name grade.report -print ) >> .grade_list
 source .grade_list
-rm -f .grade_list
+#rm -f .grade_list
 
 
 # Collect the Participation Scores
@@ -188,28 +192,28 @@ CURRENT_GP=$(( PARTIPICATION_GP + LABORATORY_GP  + QUIZ_GP + EXAM_GP  ))
 
 # Consider making the output .md
 cat > "$(date +%b_%d).guesstimated_grade.md" <<EOF
-## Current guesstimated Grade
+## Current "Guesstimated" Grade
 
 * Date Prepared: $(date)
 * Caveat: Past performance does not predict future performance. 
 
 
-|                             | Average                  | Weight                     |Points            
+|                             | Average                  | Percent                    |Points            
 | :---------------------------| -----------------------: | --------------------------:| ------------------: |
-|  Participation:             | ${EXAM_AVERAGE}          | ${PARTICIPATION_PERCENT}%  | ${PARTICIPATION_GP} |
-|  Laboratory Assignments:    | ${QUIZ_AVERAGE}          | ${LABORATORY_PERCENT}%     | ${LABORATORY_GP}    |
-|  Quizzes:                   | ${LABORATORY_AVERAGE}    | ${QUIZ_PERCENT}%           | ${QUIZ_GP}          |
-|  Exams:                     | ${PARTICIPATION_AVERAGE} | ${EXAM_PERCENT}%           | ${EXAM_GP}          |
+|  Participation:             | ${PARTICIPATION_AVERAGE} | ${PARTICIPATION_PERCENT}%  | ${PARTICIPATION_GP} |
+|  Laboratory Assignments:    | ${LABORATORY_AVERAGE}    | ${LABORATORY_PERCENT}%     | ${LABORATORY_GP}    |
+|  Quizzes:                   | ${QUIZ_AVERAGE}          | ${QUIZ_PERCENT}%           | ${QUIZ_GP}          |
+|  Exams:                     | ${EXAM_AVERAGE}          | ${EXAM_PERCENT}%           | ${EXAM_GP}          |
 |  **Total:**                 |                          |                            | ${CURRENT_GP}       |
 
-|                             | Scores                     | Count                       | Average                  |
-| :---------------------------| -------------------------: | --------------------------: | -----------------------: |        
-|  Participation:             | ${PARTICIPATION_SCORES[@]} | ${#PARTICIPATION_SCORES[@]} | ${EXAM_AVERAGE}          |        
-|  Laboratory Assignments:    | ${LABORATORY_SCORES[@]}    | ${#LABORATORY_SCORES[@]}    | ${QUIZ_AVERAGE}          |        
-|  Quizzes:                   | ${QUIZ_SCORES[@]}          | ${#QUIZ_SCORES[@]}          | ${LABORATORY_AVERAGE}    |        
-|  Exams:                     | ${EXAM_SCORES[@]}          | ${#EXAM_SCORES[@]}          | ${PARTICIPATION_AVERAGE} |        
+|                             | Count                       | Average                  |Scores                       |
+| :---------------------------| --------------------------: | -----------------------: |:--------------------------  |
+|  Participation:             | ${#PARTICIPATION_SCORES[@]} | ${PARTICIPATION_AVERAGE} | ${PARTICIPATION_SCORES[@]}  |
+|  Laboratory Assignments:    | ${#LABORATORY_SCORES[@]}    | ${LABORATORY_AVERAGE}    | ${LABORATORY_SCORES[@]}     |
+|  Quizzes:                   | ${#QUIZ_SCORES[@]}          | ${QUIZ_AVERAGE}          | ${QUIZ_SCORES[@]}           |
+|  Exams:                     | ${#EXAM_SCORES[@]}          | ${EXAM_AVERAGE}          | ${EXAM_SCORES[@]}           |
 
-The Final participation grade (ASSIGNMENT_00_total) was assigned as ${PARTICIPATION_CALCULATION} value of ${ASSIGNMENT_00_total}.
+The final "participation grade" (ASSIGNMENT_00_total) was assigned as ${PARTICIPATION_CALCULATION} value of ${ASSIGNMENT_00_total}.
 
 
 ### Description: Grade Guessimator Tool
@@ -231,5 +235,5 @@ This guesstimate is based upon the following information:
 
 EOF
 
-open "$(date +%b_%d).guesstimated_grade.md"
+${LAUNCH} "$(date +%b_%d).guesstimated_grade.md"
 
