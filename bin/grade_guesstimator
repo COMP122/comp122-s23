@@ -188,7 +188,7 @@ QUIZ_GP=$(( QUIZ_AVERAGE * QUIZ_PERCENT / 100 ))
 EXAM_GP=$(( EXAM_AVERAGE * EXAM_PERCENT / 100 ))
 
 
-CURRENT_GP=$(( PARTIPICATION_GP + LABORATORY_GP  + QUIZ_GP + EXAM_GP  ))
+CURRENT_GP=$(( PARTICIPATION_GP + LABORATORY_GP  + QUIZ_GP + EXAM_GP  ))
 
 # Consider making the output .md
 cat > "$(date +%b_%d).guesstimated_grade.md" <<EOF
