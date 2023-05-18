@@ -20,7 +20,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 
 1. Quiz 1: Models of Communication and Computation
-   - Status: Released
+   - Status: Graded
    - Additional Information: Online Timed Quiz
    - Deliverable ID: 10
    - Invitation URL: https://classroom.github.com/a/JG2CL3In
@@ -135,7 +135,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="digital">Digital Logic (Section 3)</h3>
 
 1. Name: Digital-Logic
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 31
    - Invitation URL: https://classroom.github.com/a/QxOuzufc
    - Due Date: May 9 23:59:59 (revised)
@@ -161,10 +161,11 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
      
 
 1. Name: binary32 Encoding
-   - Status: Released,
+   - Status: Graded
    - Deliverable ID: 43
    - Invitation URL: https://classroom.github.com/a/L_lMxoNI
    - Due Date: Mar 12 23:59
+   - Graded Based upon Mar 16 23:59
      
 1. Name: strlen
    - Status: Graded (In class assignment)
@@ -173,7 +174,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: 2 hour limit and before Mar 28 23:59:59
 
 1. Name: dec2bin
-   - Status: Released
+   - Status: Graded
    - Deliverable ID: 45
    - Invitation URL: https://classroom.github.com/a/U7-Zwn4k
    - Due Date: Apr 13 23:59:59
