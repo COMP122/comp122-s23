@@ -1,0 +1,121 @@
+1. Update smf-steve with current classes  (done)
+1. Update calendar done (done)
+1. update faculty app (done)
+
+1. Instructions to setup  WSL
+
+
+1. github hooks and actions
+   - Setup github classroom actions for auto testing.
+
+
+   Options:  Goal to have them see the errors on the CLI
+
+      - create an alias for cloning a repo
+        * git clone
+        * copy in client side hooks
+
+  516  alais git="git "
+  517  alias git="git "
+  518  alias submit="push"
+
+
+      - create an alias for pushing a repo
+        * git push
+        * run makefile first
+
+      - Use actins in github to perform outgrading
+        - use makefile
+        - update to use :  Assuming this works.
+        ```
+          - name: Save state
+          run: echo "{name}={value}" >> $GITHUB_STATE
+          
+          - name: Set output
+          run: echo "{name}={value}" >> $GITHUB_OUTPUT
+        ```
+
+1. Step through of submission processes..
+
+1. Markdown Makefile:
+   - double processing of Name and Account during filtering
+     -- Name and Account
+        - can't have # in the awk because the are interpreted as comments
+        - can't have response tags on them...
+   - Issue with the number of log entries, only one shows
+   - submission and assignment differ by more than 4 lines
+      (2 lines for name and account + 2 more)
+
+
+1. Tools Lecture
+   - git 
+   - git hooks
+   - bash CLI
+      - commands
+      - executiong commands
+      - tty controls:
+      - command, options, and args
+      - quoting
+      -Envirnment variables
+      - automation/.profile
+   - subl
+
+   - HTML / markdown
+   - walk through of submission process
+
+1. videos
+   - walk through the submission process
+   - 
+
+1. review syllabus
+   - Purpose of this course
+     * Bottom line: to prepare you for a career is CS,SE,CIT, etc.
+       - Hence there is a bias on my part to prompt
+         - speicific behaviors, skills, and attitudes, and knowledge
+         * that will help you to be successful are 
+
+   - Section Equity Grading
+     - goal to remove bias
+     - some biases to remove is behaviori
+
+   - AI
+   - Necessary but not Sufficietion: Requirements
+      - attendence is required
+      - paricipation is required
+      - home work
+   
+1. updated subl to include different colors for mips instructions
+    - blue: native
+    - blay: idomis/synamoms
+    - blay: pseudo
+    - read: labels
+
+1. instructions to install subl
+   - add .mips
+   - add .j
+
+1. instructions to install mips_subroutine, java_subroutine
+
+1. Write java code for
+    - base64 -- no
+    -- base2
+    -- base10
+    -- base8
+    -- base16
+    -- ascii.index   printf \\$(printf '%03o' $1)
+
+    for i in $(sed -e 's/\(.\)/\1 /g' <<< "$in" ) ; do
+       printf "%d " "'$i"
+    done
+    printf "\n"
+
+
+    -- ascii.char
+   
+   for i in    ; do 
+       printf \\$(printf '%03o' $i)
+   done
+   printf "\n"
+
+
+
