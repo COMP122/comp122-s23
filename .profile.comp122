@@ -61,3 +61,5 @@ function comp122-keygen () {
 
 PATH="${COMP122_BIN}:${SUBLIME_BIN}:$PATH"
 GIT_EDITOR="$SUBLIME"
+
+PS1="comp122:\W \$ "
